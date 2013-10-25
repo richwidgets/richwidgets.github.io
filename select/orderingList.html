@@ -20,8 +20,27 @@
 
 
 
-  <link rel="stylesheet" href="../assets-demo/richwidgets-demo.min.css">
-  <script src="../assets-demo/richwidgets-demo.min.js"></script>
+  <link rel="stylesheet" href="../assets/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../assets/font-awesome/font-awesome.css">
+
+  <link rel="stylesheet" href="../assets/richwidgets/select/select-list.css">
+  <link rel="stylesheet" href="../assets/richwidgets/select/ordering-list.css">
+  
+
+  <script src="../assets/jquery/jquery.js"></script>
+  <script src="../assets/jquery-ui/jquery-ui.min.js"></script>
+
+  <script src="../assets/jquery-ui/jquery.ui.position.js"></script>
+  <script src="../assets/jquery-ui/jquery.ui.core.js"></script>
+  <script src="../assets/jquery-ui/jquery.ui.widget.js"></script>
+  <script src="../assets/jquery-ui/jquery.ui.mouse.js"></script>
+  <script src="../assets/jquery-ui/jquery.ui.button.js"></script>
+  <script src="../assets/jquery-ui/jquery.ui.selectable.js"></script>
+  <script src="../assets/jquery-ui/jquery.ui.sortable.js"></script>
+  <script src="../assets/richwidgets/select/orderingList.js"></script>
+  
+
+  <script src="http://localhost:35729/livereload.js"></script>
 
 
   
@@ -78,10 +97,13 @@
                 <li ><a href="pickList.html">PickList</a></li>
               
             
+              
+            
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li ><a href="../tests.html">Testing</a></li>
         <li ><a href="../contributing.html">Contributing</a></li>
       </ul>
     </div>
@@ -135,10 +157,9 @@ DOM nodes required to enable user interactions.</p>
   &lt;li data-key=&quot;8&quot;&gt;Item 8&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
 </div>
-    <div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> list_options = {
-  header: <span class="string">"List layout"</span> <span class="comment">//caption</span>
-};
-$(<span class="string">"#list"</span>).orderingList(list_options);</code></pre>
+    <div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#list'</span>).orderingList({
+  header: <span class="string">'List layout'</span> <span class="comment">//caption</span>
+});</code></pre>
 </div>
   </div>
 
@@ -175,11 +196,10 @@ $(<span class="string">"#list"</span>).orderingList(list_options);</code></pre>
   &lt;li data-key=&quot;8&quot;&gt;Item 8&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
 </div>
-    <div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> list_dragselect_options = {
-  header: <span class="string">"List layout w/ drag-select"</span>, <span class="comment">//caption</span>
+    <div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#list_dragselect'</span>).orderingList({
+  header: <span class="string">'List layout w/ drag-select'</span>, <span class="comment">//caption</span>
   dragSelect: <span class="literal">true</span>
-}
-$(<span class="string">"#list_dragselect"</span>).orderingList(list_dragselect_options);</code></pre>
+});</code></pre>
 </div>
   </div>
 
@@ -296,10 +316,9 @@ $(<span class="string">"#list_dragselect"</span>).orderingList(list_dragselect_o
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
 </div>
-    <div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> table_options = {
-  header: <span class="string">"Table layout"</span>
-};
-$(<span class="string">"#table"</span>).orderingList(table_options);</code></pre>
+    <div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#table'</span>).orderingList({
+  header: <span class="string">'Table layout'</span>
+});</code></pre>
 </div>
   </div>
 
@@ -417,11 +436,10 @@ $(<span class="string">"#table"</span>).orderingList(table_options);</code></pre
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
 </div>
-    <div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> table_dragselect_options = {
-  header: <span class="string">"Table layout w/ drag-select"</span>,
+    <div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#table_dragselect'</span>).orderingList({
+  header: <span class="string">'Table layout w/ drag-select'</span>,
   dragSelect: <span class="literal">true</span>
-};
-$(<span class="string">"#table_dragselect"</span>).orderingList(table_dragselect_options);</code></pre>
+});</code></pre>
 </div>
   </div>
 

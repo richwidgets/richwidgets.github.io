@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="fragment" content="!"/>
 
-  <title>Home</title>
+  <title>Tests</title>
 
 
 
@@ -59,7 +59,7 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
 
-        <li  class="active"><a href=".">Home</a></li>
+        <li ><a href=".">Home</a></li>
         <li ><a href="about.html">About</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Widgets <b class="caret"></b></a>
@@ -93,7 +93,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ><a href="tests.html">Testing</a></li>
+        <li  class="active"><a href="tests.html">Testing</a></li>
         <li ><a href="contributing.html">Contributing</a></li>
       </ul>
     </div>
@@ -104,15 +104,37 @@
 
 <div class="container">
   
+<h1>Testing RichWidgets <a href="https://travis-ci.org/richwidgets/richwidgets"><img src="https://travis-ci.org/richwidgets/richwidgets.png?branch=master" alt="Build Status"></a></h1>
+<blockquote>
+<p>A JavaScript project containing standalone javascript widgets based on Bootstrap, jQuery UI and other third-party widgets, styled with LESS.</p>
+</blockquote>
+<h2>Testing</h2>
+<p>In the rapid evolving world of Web standards, libraries, and browsers testing is of paramount importance.  We need to make
+sure our widgets continue to function as we upgrade the various libraries that make up our project.</p>
+<p>RichWidgets uses <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="http://karma-runner.github.io/">jasmine-jquery)(<a href="https://github.com/velesin/jasmine-jquery">https://github.com/velesin/jasmine-jquery</a>),
+using [karma</a> as our test runner.  Widget tests must go beyond simple setup/takedown of the widgets,
+and must also test all widget options and user interactions.  In this way we will be able to keep our widgets both current and stable.</p>
+<h3>Running Test Suite</h3>
+<p><em>Run all tests on particular browsers:</em></p>
+<pre><code>karma start karma.conf.js --browsers=PhantomJS,Chrome,Firefox</code></pre>
+<h3>Developing Tests</h3>
+<p><em>Run test suite continuously reacting on file changes:</em></p>
+<pre><code>karma start karma.conf.js --single-run=false --auto-watch=true --browsers=Chrome</code></pre>
+<p><em>Running selected tests:</em></p>
+<ul>
+<li>Open a javascript test source</li>
+<li>Rename the test definition from <code>it</code> to <code>iit</code><ul>
+<li>or rename the specification from <code>describe</code> to <code>ddescribe</code></li>
+</ul>
+</li>
+</ul>
+<h3>Test Configuration</h3>
+<p>Tests are configured in two files:</p>
+<ul>
+<li><code>karma.conf.js</code> - configuration for Karma runner</li>
+<li><code>test/test-main.js</code> - configuration for Module Loading (AMD)</li>
+</ul>
 
-<div class="jumbotron">
-  <div class="container">
-    <h1>RichWidgets!</h1>
-    <p>RichWidgets provides a set of responsive widgets built on top of jQuery UI and styled with Bootstrap 3.
-      Use RichWidgets to bring rich and complex functionality to your web applications!</p>
-    <p><a class="btn btn-primary btn-lg" href="about.html">Learn More</a></p>
-  </div>
-</div>
 </div>
 </body>
 </html>

@@ -20,8 +20,17 @@
 
 
 
-  <link rel="stylesheet" href="assets-demo/richwidgets-demo.min.css">
-  <script src="assets-demo/richwidgets-demo.min.js"></script>
+  <link rel="stylesheet" href="assets/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="assets/font-awesome/font-awesome.css">
+
+  
+
+  <script src="assets/jquery/jquery.js"></script>
+  <script src="assets/jquery-ui/jquery-ui.min.js"></script>
+
+  
+
+  <script src="http://localhost:35729/livereload.js"></script>
 
 
   
@@ -78,10 +87,13 @@
                 <li ><a href="select/pickList.html">PickList</a></li>
               
             
+              
+            
           </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li ><a href="tests.html">Testing</a></li>
         <li  class="active"><a href="contributing.html">Contributing</a></li>
       </ul>
     </div>
@@ -92,28 +104,92 @@
 
 <div class="container">
   
+
+<a href="https://github.com/richwidgets/richwidgets"><img style="position: absolute; top: 50px; right: 0; border: 0; z-index: 2000" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
 <h1>Contributing to RichWidgets <a href="https://travis-ci.org/richwidgets/richwidgets"><img src="https://travis-ci.org/richwidgets/richwidgets.png?branch=master" alt="Build Status"></a></h1>
 <blockquote>
 <p>A JavaScript project containing standalone javascript widgets based on Bootstrap, jQuery UI and other third-party widgets, styled with LESS.</p>
 </blockquote>
 <h2>Hacking on RichWidgets</h2>
+<p>Begin by setting you your environment and making sure you can build RichWidgets as described the
+<a href="about.html">README.md</a>.</p>
 <p>Widgets are highly visual constructs, and we are more effective in developing them when we get rapid feedback as we introduce changes.
 Without this rapid feedback, we are like sculptors carving blindfolded!</p>
 <p>Run the <code>grunt dev</code> command from the richwidgets root folder to start up a development version of the online demo with
-integrated <a href="https://github.com/livereload/livereload-js">live-reload</a>.  As you make changes to the html, javascript, and LESS
+integrated <a href="https://github.com/livereload/livereload-js">live-reload</a>.  You will see this demo runnin locally at:</p>
+<blockquote>
+<p><a href="http://localhost:9000">http://localhost:9000</a></p>
+</blockquote>
+<p>As you make changes to the html, javascript, and LESS
 source, the source will be compiled and the demo site will be updated.</p>
-<p>Additionally, this development version of the demo also uses unminified versions of the sources making it easier to debug your widget
+<p>Additionally, this development version of the demo uses unminified versions of the sources making it easier to debug your widget
 in your browsers development tools.</p>
 <p>The demo pages themselves use <a href="http://handlebarsjs.com/">handlebars.js</a> for templating.  This allows us to keep our demo
 code <a href="http://en.wikipedia.org/wiki/Don%27t_Repeat_Yourself">DRY</a> by using the same code to both run the page sample as well as display
 the code on the page.  Handlebars is easily extensible through it&#39;s <a href="http://assemble.io/docs/Custom-Helpers.html">helper</a>
 mechanism.  If you find yourself bending over backwards to make something work, consider writing such a helper.</p>
+<h2>Coding Style</h2>
+<p>It helps to be consistent.  Here are the coding style conventions we have agreed to follow in this project.  this will be
+updated as new discrepancies are discovered and cleaned up.  Wherever possible these conventions are being monitored by
+jshint.</p>
+<ul>
+<li>Indentation<ul>
+<li>Use spaces (not tabs)</li>
+<li>Indentation size is 2 spaces</li>
+</ul>
+</li>
+<li>Filenames<ul>
+<li>All filenames will use a lowercase-hyphenated naming convention</li>
+</ul>
+</li>
+<li>LESS<ul>
+<li>CSS class names use lowercase-hyphenated naming convention</li>
+<li>Define variables centrally in <code>src/widgets/variables.less</code></li>
+<li>Define mixins centrally in <code>src/widgets/mixins.less</code></li>
+</ul>
+</li>
+<li>JavaScript<ul>
+<li>Functions and variables names use camelCase</li>
+<li>Single quotes <code>&#39;</code> for strings</li>
+<li>do not use <code>self</code> for capturing a reference to <code>this</code><ul>
+<li>use <code>widget</code> where it makes sense to do so, <code>that</code> otherwise</li>
+</ul>
+</li>
+<li>function white-spaces<ul>
+<li>named functions<ul>
+<li><code>function name(param1, param2) {</code></li>
+</ul>
+</li>
+<li>unnamed functions<ul>
+<li><code>function (param1, param2) {</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Widget Factory<ul>
+<li>use the &quot;rich&quot; jquery plugin namespace</li>
+<li>Widget name prefix TBD</li>
+<li>Widget event prefix: stick with the default name of the widget (eg. no underscores or abbreviating)</li>
+<li>initialize all options, using null is default value is required</li>
+</ul>
+</li>
+</ul>
+<h2>Creating a new widget</h2>
+<p>To create a new widget called &quot;My widget&quot;, start by creating the files:</p>
+<ul>
+<li><code>src/widget/&lt;widget-family&gt;/my-widget.less</code></li>
+<li><code>src/widget/&lt;widget-family&gt;/my-widget.js</code></li>
+</ul>
+<p>Create a demo for your widget in</p>
+<ul>
+<li><code>src/demo/pages/&lt;widget-family/my-widget.hbs</code></li>
+</ul>
+<p>The demo pages use <a href="http://handlebarsjs.com/">handlebars.js</a>, and will be added to the site navigation automatically.</p>
 <h2>Testing</h2>
-<p>In the rapid evolving world of Web standards, libraries, and browsers testing is of paramount importance.  We need to make
-sure our widgets continue to function as we upgrade the various libraries that make up our project.</p>
-<p>RichWidgets uses <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="http://karma-runner.github.io/">jasmine-jquery)(<a href="https://github.com/velesin/jasmine-jquery">https://github.com/velesin/jasmine-jquery</a>),
-using [karma</a> as our test runner.  Widget tests must go beyond simple setup/takedown of the widgets,
-and must also test all widget options and user interactions.  In this way we will be able to keep our widgets both current and stable.</p>
+<p>Read about our approach to testing in the <a href="tests.html">TESTS.md</a> guide.</p>
 
 </div>
 </body>
