@@ -1,0 +1,785 @@
+{
+    "project": {
+        "name": "richfaces-widgets",
+        "description": "Standalone javascript widgets",
+        "logo": "../logo.png",
+        "version": "0.0.1-wip",
+        "url": "http://richwidgets.github.io"
+    },
+    "files": {
+        "src/widgets/input/autocomplete.js": {
+            "name": "src/widgets/input/autocomplete.js",
+            "modules": {
+                "Input": 1
+            },
+            "classes": {
+                "richAutocomplete": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/widgets/output/chart.js": {
+            "name": "src/widgets/output/chart.js",
+            "modules": {
+                "Output": 1
+            },
+            "classes": {
+                "chart": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/widgets/select/orderingList.js": {
+            "name": "src/widgets/select/orderingList.js",
+            "modules": {
+                "Select": 1
+            },
+            "classes": {
+                "orderingList": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/widgets/select/pickList.js": {
+            "name": "src/widgets/select/pickList.js",
+            "modules": {},
+            "classes": {
+                "pickList": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Input": {
+            "name": "Input",
+            "submodules": {},
+            "classes": {
+                "richAutocomplete": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 1,
+            "description": "An autocomplete widget"
+        },
+        "Output": {
+            "name": "Output",
+            "submodules": {},
+            "classes": {
+                "chart": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/widgets/output/chart.js",
+            "line": 1,
+            "description": "A widget for creating data chart"
+        },
+        "Select": {
+            "name": "Select",
+            "submodules": {},
+            "classes": {
+                "orderingList": 1,
+                "pickList": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/widgets/select/pickList.js",
+            "line": 1,
+            "description": "A widget providing sorting capabilities for a list of elements"
+        }
+    },
+    "classes": {
+        "richAutocomplete": {
+            "name": "richAutocomplete",
+            "shortname": "richAutocomplete",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Input",
+            "namespace": "",
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 1,
+            "description": "An autocomplete widget"
+        },
+        "chart": {
+            "name": "chart",
+            "shortname": "chart",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Output",
+            "namespace": "",
+            "file": "src/widgets/output/chart.js",
+            "line": 1,
+            "description": "A widget for creating data chart"
+        },
+        "orderingList": {
+            "name": "orderingList",
+            "shortname": "orderingList",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Select",
+            "namespace": "",
+            "file": "src/widgets/select/orderingList.js",
+            "line": 1,
+            "description": "A widget providing sorting capabilities for a list of elements"
+        },
+        "pickList": {
+            "name": "pickList",
+            "shortname": "pickList",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Select",
+            "namespace": "",
+            "file": "src/widgets/select/pickList.js",
+            "line": 1,
+            "description": "A widget providing selection and sorting capabilities for a list of elements"
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 43,
+            "description": "cached turns caching on",
+            "itemtype": "property",
+            "name": "cached",
+            "type": "Boolean",
+            "default": "false",
+            "class": "richAutocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 51,
+            "description": "defines what prefix of searchTerm will be used to query cache",
+            "itemtype": "property",
+            "name": "extractCacheSearchPrefix",
+            "type": "String",
+            "class": "richAutocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 58,
+            "description": "pluggable cache cacheImplemenation",
+            "itemtype": "property",
+            "name": "cached",
+            "type": "Object",
+            "class": "richAutocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 65,
+            "description": "Provide function which will be used to filter array of suggestions by given searchTerm\nfunction filter(array, searchTerm)",
+            "itemtype": "property",
+            "name": "filter",
+            "type": "Object",
+            "class": "richAutocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 73,
+            "description": "Function called when search triggered but before suggestions are composed.\n\nIt gives chance to update source of suggestions as reflection to current search term.\n\nfunction({ term: currentSearchTerm }, doneCallback)\n\nwhen doneCallback is specified, autocomplete will wait with update of suggestions before doneCallback\nis called. Usually it is called on the end of AJAX data update.",
+            "itemtype": "property",
+            "name": "update",
+            "type": "Function",
+            "class": "richAutocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 431,
+            "description": "Default implementation of extracting searchTerm prefix for checking cache",
+            "class": "richAutocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 370,
+            "description": "Redraw chart without axis ranges",
+            "itemtype": "method",
+            "name": "resetZoom",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 380,
+            "description": "Returns chart object",
+            "itemtype": "method",
+            "name": "getPlotObject",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 397,
+            "description": "Use the destroy method to clean up any modifications your widget has made to the DOM",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 12,
+            "description": "Disable the orderingList widget",
+            "itemtype": "property",
+            "name": "disabled",
+            "type": "Boolean",
+            "default": "false",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 21,
+            "description": "The text to use for the orderingList header",
+            "itemtype": "property",
+            "name": "header",
+            "type": "String",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 28,
+            "description": "The height of the orderingList",
+            "itemtype": "property",
+            "name": "height",
+            "type": "String",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 35,
+            "description": "The minimum height of the orderingList",
+            "itemtype": "property",
+            "name": "heightMin",
+            "type": "String",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 42,
+            "description": "The maximum height of the orderingList",
+            "itemtype": "property",
+            "name": "heightMax",
+            "type": "String",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 49,
+            "description": "A CSS class to be added to the orderingList.\nMultiple classes should be space separated",
+            "itemtype": "property",
+            "name": "styleClass",
+            "type": "String",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 57,
+            "description": "A CSS class to be added to each column of the orderingList when table layout is used.\nMultiple classes should be space separated",
+            "itemtype": "property",
+            "name": "columnClasses",
+            "type": "String",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 65,
+            "description": "When true, show the buttons for ordering the selected elements",
+            "itemtype": "property",
+            "name": "showButtons",
+            "type": "Boolean",
+            "default": "true",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 73,
+            "description": "Text to be applied to the ordering buttons of the ordering list.  The text should be arranged as an object in\nJSON notation.\n\neg. {first: ..., up: ..., down: ..., last: ...}",
+            "itemtype": "property",
+            "name": "orderButtonsText",
+            "type": "JSON",
+            "default": "null",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 84,
+            "description": "When true, it is not possible to move a selected element outside of the orderingList",
+            "itemtype": "property",
+            "name": "contained",
+            "type": "Boolean",
+            "default": "true",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 92,
+            "description": "When true dragging the mouse over the elements selects multiple elements.  This also reduces the drag handle\nused to re-order the elements.",
+            "itemtype": "property",
+            "name": "dragSelect",
+            "type": "Boolean",
+            "default": "true",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 101,
+            "description": "Allows elements to be dragged onto an empty list when true",
+            "itemtype": "property",
+            "name": "dropOnEmpty",
+            "type": "Boolean",
+            "default": "true",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 109,
+            "description": "Allows elements to be ordered by drag and drop with the mouse when true",
+            "itemtype": "property",
+            "name": "mouseOrderable",
+            "type": "Boolean",
+            "default": "true",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 117,
+            "description": "The String prefixed to all events triggered within the orderingList widget",
+            "itemtype": "property",
+            "name": "widgetEventPrefix",
+            "type": "JSON",
+            "default": "orderinglist_",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 128,
+            "description": "Fired when the target list of the orderingList changes values.",
+            "itemtype": "event",
+            "name": "change",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 134,
+            "description": "Fired after the dynamically created DOM elements of the orderingList have been created",
+            "itemtype": "event",
+            "name": "addDomElements",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 140,
+            "description": "Fired after the orderingList has been destroyed",
+            "itemtype": "event",
+            "name": "destroy",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 146,
+            "description": "Fired when the orderingList receives focus",
+            "itemtype": "event",
+            "name": "focus",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 152,
+            "description": "Fired when the orderingList loses focus",
+            "itemtype": "event",
+            "name": "focus",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 271,
+            "description": "Removes the orderingList functionality completely. This will return the element back to its pre-init state.",
+            "itemtype": "method",
+            "name": "destroy",
+            "chainable": 1,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 455,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 563,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 788,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 838,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 12,
+            "description": "Disable the pickList widget",
+            "itemtype": "property",
+            "name": "disabled",
+            "type": "Boolean",
+            "default": "false",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 20,
+            "description": "The text to use for the pickList header",
+            "itemtype": "property",
+            "name": "header",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 27,
+            "description": "The text to use for the source header of the pickList",
+            "itemtype": "property",
+            "name": "header",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 34,
+            "description": "The text to use for the target header of the pickList",
+            "itemtype": "property",
+            "name": "header",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 41,
+            "description": "The height of the pickList",
+            "itemtype": "property",
+            "name": "height",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 48,
+            "description": "The minimum height of the pickList",
+            "itemtype": "property",
+            "name": "heightMin",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 55,
+            "description": "The maximum height of the pickList",
+            "itemtype": "property",
+            "name": "heightMax",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 62,
+            "description": "A CSS class to be added to the pickList.\nMultiple classes should be space separated",
+            "itemtype": "property",
+            "name": "styleClass",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 70,
+            "description": "A CSS class to be added to each column of the pickList when table layout is used.\nMultiple classes should be space separated",
+            "itemtype": "property",
+            "name": "columnClasses",
+            "type": "String",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 78,
+            "description": "When true, clicking on a pickList element will move it between the source and target lists",
+            "itemtype": "property",
+            "name": "switchByClick",
+            "type": "Boolean",
+            "default": "false",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 86,
+            "description": "When true, double-clicking on a pickList element will move it between the source and target lists",
+            "itemtype": "property",
+            "name": "switchByDblClick",
+            "type": "Boolean",
+            "default": "false",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 94,
+            "description": "When true, elements in the target list can be re-ordered",
+            "itemtype": "property",
+            "name": "orderable",
+            "type": "Boolean",
+            "default": "true",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 102,
+            "description": "Text to be applied to the ordering buttons of the target list.  The text should be arranged as an object in\nJSON notation.\n\neg. {first: ..., up: ..., down: ..., last: ...}",
+            "itemtype": "property",
+            "name": "orderButtonsText",
+            "type": "JSON",
+            "default": "null",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 113,
+            "description": "Text to be applied to the picking buttons of the picklist.  The text should be arranged as an object in\nJSON notation.\n\neg. {addAll: ..., add: ..., remove: ..., removeAll: ...}",
+            "itemtype": "property",
+            "name": "pickButtonsText",
+            "type": "JSON",
+            "default": "null",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 124,
+            "description": "The String prefixed to all events triggered within the pickList widget",
+            "itemtype": "property",
+            "name": "widgetEventPrefix",
+            "type": "JSON",
+            "default": "picklist_",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 135,
+            "description": "Fired when the target list of the pickList changes values.",
+            "itemtype": "event",
+            "name": "change",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 141,
+            "description": "Fired after the dynamically created DOM elements of the pickList have been created",
+            "itemtype": "event",
+            "name": "addDomElements",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 147,
+            "description": "Fired after the pickList has been destroyed",
+            "itemtype": "event",
+            "name": "destroy",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 153,
+            "description": "Fired when the pickList receives focus",
+            "itemtype": "event",
+            "name": "focus",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 159,
+            "description": "Fired when the pickList loses focus",
+            "itemtype": "event",
+            "name": "focus",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 214,
+            "description": "Removes the pickList functionality completely. This will return the element back to its pre-init state.",
+            "itemtype": "method",
+            "name": "destroy",
+            "chainable": 1,
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 236,
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 238,
+            "description": "Move items from the target list of the pickList to the source list.",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "A list of Elements to remove from the target of the pickList",
+                    "type": "Object"
+                },
+                {
+                    "name": "event",
+                    "description": "The event that triggered the removal of the elements.  This event will be made accessible\nwhen the resulting change event is fired.",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "removeItems",
+            "chainable": 1,
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 257,
+            "description": "Move items from the source list of the pickList to the target list.",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "A list of Elements to remove from the target of the pickList",
+                    "type": "Object"
+                },
+                {
+                    "name": "event",
+                    "description": "The event that triggered the removal of the elements.  This event will be made accessible\nwhen the resulting change event is fired.",
+                    "type": "Object"
+                }
+            ],
+            "itemtype": "method",
+            "name": "removeItems",
+            "chainable": 1,
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 277,
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 582,
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 592,
+            "class": "pickList",
+            "module": "Select"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nDefault implementation of extracting searchTerm prefix for checking cache",
+            "line": " src/widgets/input/autocomplete.js:431"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/orderingList.js:455"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/orderingList.js:563"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/orderingList.js:788"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/orderingList.js:838"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/pickList.js:236"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/pickList.js:277"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/pickList.js:582"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/pickList.js:592"
+        }
+    ]
+}
