@@ -134,17 +134,17 @@ jshint.</p>
 </ul>
 </li>
 <li>Filenames<ul>
-<li>All filenames will use a lowercase-hyphenated naming convention</li>
+<li>All filenames will use a lowercase-hyphenated naming convention (e.g. <code>popup-panel.js</code>)</li>
 </ul>
 </li>
 <li>LESS<ul>
-<li>CSS class names use lowercase-hyphenated naming convention</li>
+<li>CSS class names use lowercase-hyphenated naming convention (e.g. <code>popup-panel</code>)</li>
 <li>Define variables centrally in <code>src/widgets/variables.less</code></li>
 <li>Define mixins centrally in <code>src/widgets/mixins.less</code></li>
 </ul>
 </li>
 <li>JavaScript<ul>
-<li>Functions and variables names use camelCase</li>
+<li>Functions and variables names use camelCase (e.g. <code>popupPanelWidth</code>, <code>showPopup()</code>)</li>
 <li>Single quotes <code>&#39;</code> for strings</li>
 <li>do not use <code>self</code> for capturing a reference to <code>this</code><ul>
 <li>use <code>widget</code> where it makes sense to do so, <code>that</code> otherwise</li>
@@ -164,10 +164,10 @@ jshint.</p>
 </ul>
 </li>
 <li>Widget Factory<ul>
-<li>use the &quot;rich&quot; jquery plugin namespace</li>
-<li>Widget name prefix TBD</li>
+<li>use the <code>rich</code> jquery plugin namespace</li>
+<li>Widget name prefix <strong><em>TBD</em></strong></li>
 <li>Widget event prefix: stick with the default name of the widget (eg. no underscores or abbreviating)</li>
-<li>initialize all options, using null is default value is required</li>
+<li>initialize all options, using <code>null</code> as default value is required</li>
 </ul>
 </li>
 </ul>

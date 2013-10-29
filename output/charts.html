@@ -125,30 +125,29 @@
 &lt;span id=&quot;hoverdata&quot;&gt;&lt;/span&gt;</code></pre>
 
                 <pre><code class="language-js">$(<span class="string">'#placeholder'</span>).chart({
-    handlers:{
-        onplotclick:<span class="keyword">function</span>(event){
-            $(<span class="string">'#clickdata'</span>).text(<span class="string">'click point '</span> +
-                event.data.dataIndex + <span class="string">' in '</span> +
-                event.data.item.series.label);
-        }
-    },
-    data: [
-        {data:[[<span class="number">1990</span>,<span class="number">19.1</span>],[<span class="number">1991</span>,<span class="number">18.9</span>],[<span class="number">1992</span>,<span class="number">18.6</span>],[<span class="number">1993</span>,<span class="number">19.5</span>],[<span class="number">1994</span>,<span class="number">19.5</span>],[<span class="number">1995</span>,<span class="number">19.3</span>],[<span class="number">1996</span>,<span class="number">19.4</span>],[<span class="number">1997</span>,<span class="number">19.7</span>],[<span class="number">1998</span>,<span class="number">19.5</span>],[<span class="number">1999</span>,<span class="number">19.5</span>],[<span class="number">2000</span>,<span class="number">20</span>]],label:<span class="string">'USA'</span>},
-        {data:[[<span class="number">1990</span>,<span class="number">2.2</span>],[<span class="number">1991</span>,<span class="number">2.2</span>],[<span class="number">1992</span>,<span class="number">2.3</span>],[<span class="number">1993</span>,<span class="number">2.4</span>],[<span class="number">1994</span>,<span class="number">2.6</span>],[<span class="number">1995</span>,<span class="number">2.7</span>],[<span class="number">1996</span>,<span class="number">2.8</span>],[<span class="number">1997</span>,<span class="number">2.8</span>],[<span class="number">1998</span>,<span class="number">2.7</span>],[<span class="number">1999</span>,<span class="number">2.6</span>],[<span class="number">2000</span>,<span class="number">2.7</span>]],label:<span class="string">'China'</span>},
-        {data:[[<span class="number">1990</span>,<span class="number">9.4</span>],[<span class="number">1991</span>,<span class="number">9.4</span>],[<span class="number">1992</span>,<span class="number">9.5</span>],[<span class="number">1993</span>,<span class="number">9.4</span>],[<span class="number">1994</span>,<span class="number">9.9</span>],[<span class="number">1995</span>,<span class="number">9.9</span>],[<span class="number">1996</span>,<span class="number">10.1</span>],[<span class="number">1997</span>,<span class="number">10.1</span>],[<span class="number">1998</span>,<span class="number">9.7</span>],[<span class="number">1999</span>,<span class="number">9.5</span>],[<span class="number">2000</span>,<span class="number">9.7</span>]],label:<span class="string">'Japan'</span>},
-        {data:[[<span class="number">1992</span>,<span class="number">14</span>],[<span class="number">1993</span>,<span class="number">12.8</span>],[<span class="number">1994</span>,<span class="number">10.9</span>],[<span class="number">1995</span>,<span class="number">10.5</span>],[<span class="number">1996</span>,<span class="number">10.4</span>],[<span class="number">1997</span>,<span class="number">10</span>],[<span class="number">1998</span>,<span class="number">9.6</span>],[<span class="number">1999</span>,<span class="number">9.7</span>],[<span class="number">2000</span>,<span class="number">9.8</span>]],label:<span class="string">'Russia'</span>}],
-    yaxis:{axisLabel:<span class="string">'metric tons of CO2 per capita'</span>},ytype:<span class="string">'class java.lang.Number'</span>,
-    xaxis:{axisLabel:<span class="string">'year'</span>},zoom:<span class="literal">false</span>,xtype:<span class="string">'class java.lang.Number'</span>,
-    charttype:<span class="string">'line'</span>
+  handlers:{
+    onplotclick:<span class="keyword">function</span>(event){
+      $(<span class="string">'#clickdata'</span>).text(<span class="string">'click point '</span> +
+        event.data.dataIndex + <span class="string">' in '</span> +
+        event.data.item.series.label);
     }
-
-);
+  },
+  data: [
+    {data:[[<span class="number">1990</span>,<span class="number">19.1</span>],[<span class="number">1991</span>,<span class="number">18.9</span>],[<span class="number">1992</span>,<span class="number">18.6</span>],[<span class="number">1993</span>,<span class="number">19.5</span>],[<span class="number">1994</span>,<span class="number">19.5</span>],[<span class="number">1995</span>,<span class="number">19.3</span>],[<span class="number">1996</span>,<span class="number">19.4</span>],[<span class="number">1997</span>,<span class="number">19.7</span>],[<span class="number">1998</span>,<span class="number">19.5</span>],[<span class="number">1999</span>,<span class="number">19.5</span>],[<span class="number">2000</span>,<span class="number">20</span>]],label:<span class="string">'USA'</span>},
+    {data:[[<span class="number">1990</span>,<span class="number">2.2</span>],[<span class="number">1991</span>,<span class="number">2.2</span>],[<span class="number">1992</span>,<span class="number">2.3</span>],[<span class="number">1993</span>,<span class="number">2.4</span>],[<span class="number">1994</span>,<span class="number">2.6</span>],[<span class="number">1995</span>,<span class="number">2.7</span>],[<span class="number">1996</span>,<span class="number">2.8</span>],[<span class="number">1997</span>,<span class="number">2.8</span>],[<span class="number">1998</span>,<span class="number">2.7</span>],[<span class="number">1999</span>,<span class="number">2.6</span>],[<span class="number">2000</span>,<span class="number">2.7</span>]],label:<span class="string">'China'</span>},
+    {data:[[<span class="number">1990</span>,<span class="number">9.4</span>],[<span class="number">1991</span>,<span class="number">9.4</span>],[<span class="number">1992</span>,<span class="number">9.5</span>],[<span class="number">1993</span>,<span class="number">9.4</span>],[<span class="number">1994</span>,<span class="number">9.9</span>],[<span class="number">1995</span>,<span class="number">9.9</span>],[<span class="number">1996</span>,<span class="number">10.1</span>],[<span class="number">1997</span>,<span class="number">10.1</span>],[<span class="number">1998</span>,<span class="number">9.7</span>],[<span class="number">1999</span>,<span class="number">9.5</span>],[<span class="number">2000</span>,<span class="number">9.7</span>]],label:<span class="string">'Japan'</span>},
+    {data:[[<span class="number">1992</span>,<span class="number">14</span>],[<span class="number">1993</span>,<span class="number">12.8</span>],[<span class="number">1994</span>,<span class="number">10.9</span>],[<span class="number">1995</span>,<span class="number">10.5</span>],[<span class="number">1996</span>,<span class="number">10.4</span>],[<span class="number">1997</span>,<span class="number">10</span>],[<span class="number">1998</span>,<span class="number">9.6</span>],[<span class="number">1999</span>,<span class="number">9.7</span>],[<span class="number">2000</span>,<span class="number">9.8</span>]],label:<span class="string">'Russia'</span>}
+  ],
+  yaxis:{axisLabel:<span class="string">'metric tons of CO2 per capita'</span>},ytype:<span class="string">'number'</span>,
+  xaxis:{axisLabel:<span class="string">'year'</span>},zoom:<span class="literal">false</span>,xtype:<span class="string">'number'</span>,
+  charttype:<span class="string">'line'</span>
+});
 
 <span class="comment">/*Flot style of event binding*/</span>
 $(<span class="string">'#placeholder'</span>).bind(<span class="string">'plothover'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(event, pos, item)</span> {</span>
-    <span class="keyword">if</span> (item) {
+  <span class="keyword">if</span> (item) {
     $(<span class="string">'#hoverdata'</span>).text(<span class="string">'hover point '</span> + item.dataIndex + <span class="string">' in '</span> + item.series.label);
-    }
+  }
 });
 
 $(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseout'</span>,<span class="keyword">function</span>(){$(<span class="string">'#hoverdata'</span>).text(<span class="string">''</span>);});</code></pre>
@@ -174,20 +173,17 @@ $(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseou
                 
                 <pre><code class="language-html">&lt;div id=&quot;pie&quot; class=&quot;rich-chart-responsive&quot;&gt;&lt;/div&gt;</code></pre>
 
-                <pre><code class="language-js">$(<span class="string">'#pie'</span>).chart(
-    {
-        data: [
-                [
-                   {data: <span class="number">12500746</span>, label: <span class="string">'Service sector'</span>},
-                   {data: <span class="number">188217</span>,   label: <span class="string">'Agricultural sector'</span>},
-                   {data: <span class="number">2995787</span>, label:  <span class="string">'Industrial sector'</span>}
-                ]
+                <pre><code class="language-js">$(<span class="string">'#pie'</span>).chart({
+  data: [
+          [
+            {data: <span class="number">12500746</span>, label: <span class="string">'Service sector'</span>},
+            {data: <span class="number">188217</span>,   label: <span class="string">'Agricultural sector'</span>},
+            {data: <span class="number">2995787</span>, label:  <span class="string">'Industrial sector'</span>}
+          ]
         ],
-        legend:{sorted:<span class="string">'reverse'</span>},
-        charttype:<span class="string">'pie'</span>
-    }
-
-);</code></pre>
+  legend:{sorted:<span class="string">'ascending'</span>},
+  charttype:<span class="string">'pie'</span>
+});</code></pre>
 
             </div>
         </fieldset>
@@ -211,11 +207,11 @@ $(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseou
                 <pre><code class="language-html">&lt;div id=&quot;bar&quot; class=&quot;rich-chart-responsive&quot;&gt;&lt;/div&gt;</code></pre>
 
                 <pre><code class="language-js">$(<span class="string">'#bar'</span>).chart({
-    data: [[[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">10</span>,<span class="number">4</span>]]],
-    series:{
-        bars:{show:<span class="literal">true</span>}
-    },
-    charttype: <span class="string">'bar'</span>
+  data: [[[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">10</span>,<span class="number">4</span>]]],
+  series:{
+    bars:{show:<span class="literal">true</span>}
+  },
+  charttype: <span class="string">'bar'</span>
 });</code></pre>
 
             </div>
@@ -240,18 +236,18 @@ $(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseou
                 <pre><code class="language-html">&lt;div id=&quot;category&quot; class=&quot;rich-chart-responsive&quot;&gt;&lt;/div&gt;</code></pre>
 
                 <pre><code class="language-js">$(<span class="string">'#category'</span>).chart(
-    {
-        data: [
-            {
-                bars:{show:<span class="literal">true</span>},
-                data:{<span class="string">'United States'</span>:<span class="number">797</span>,<span class="string">'San Marino'</span>:<span class="number">1263</span>,<span class="string">'Croatia'</span>:<span class="number">380</span>,<span class="string">'Denmark'</span>:<span class="number">480</span>,<span class="string">'Vietnam'</span>:<span class="number">13</span>}
-            }
-        ],
-        yaxis:{axisLabel:<span class="string">'Motor vehicles per 1000 people'</span>},
-        ytype:<span class="string">'class java.lang.Number'</span>,
-        xtype:<span class="string">'class java.lang.String'</span>,
-        charttype:<span class="string">'bar'</span>
-    }
+  {
+    data: [
+      {
+        bars: {show: <span class="literal">true</span>},
+          data: {<span class="string">'United States'</span>: <span class="number">797</span>, <span class="string">'San Marino'</span>: <span class="number">1263</span>, <span class="string">'Croatia'</span>: <span class="number">380</span>, <span class="string">'Denmark'</span>: <span class="number">480</span>, <span class="string">'Vietnam'</span>: <span class="number">13</span>}
+      }
+          ],
+    yaxis: {axisLabel: <span class="string">'Motor vehicles per 1000 people'</span>},
+    ytype: <span class="string">'number'</span>,
+    xtype: <span class="string">'string'</span>,
+    charttype: <span class="string">'bar'</span>
+  }
 
 );</code></pre>
 
@@ -276,17 +272,18 @@ $(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseou
                 
                 <pre><code class="language-html">&lt;div id=&quot;mulitplecategorybar&quot; class=&quot;rich-chart-responsive&quot;&gt;&lt;/div&gt;</code></pre>
 
-                <pre><code class="language-js">$(<span class="string">'#mulitplecategorybar'</span>).chart(
-    {
-        data: [
-            {bars:{<span class="string">'show'</span>:<span class="literal">true</span>}, data:{Service:<span class="number">12500746</span>,Agricultural:<span class="number">188217</span>,Industrial:<span class="number">2995787</span>}, label:<span class="string">'United States'</span>},
-            {bars:{<span class="string">'show'</span>:<span class="literal">true</span>}, data:{Service:<span class="number">3669259</span>,Agricultural:<span class="number">830931</span>,Industrial:<span class="number">3726848</span>}, label:<span class="string">'China'</span>},
-            {bars:{<span class="string">'show'</span>:<span class="literal">true</span>}, data:{Service:<span class="number">4258274</span>,Agricultural:<span class="number">71568</span>,Industrial:<span class="number">1640091</span>}, label:<span class="string">'Japan'</span>},
-            {bars:{<span class="string">'show'</span>:<span class="literal">true</span>}, data:{Service:<span class="number">2417812</span>,Agricultural:<span class="number">27205</span>,NotKnown:<span class="number">955563</span>}, label:<span class="string">'Other'</span>}
-        ],
-        ytype:<span class="string">'class java.lang.Number'</span>,xaxis:{},legend:{sorted:<span class="string">'ascending'</span>},xtype:<span class="string">'class java.lang.String'</span>,charttype:<span class="string">'bar'</span>}
-
-);</code></pre>
+                <pre><code class="language-js">$(<span class="string">'#mulitplecategorybar'</span>).chart({
+  data: [
+    {bars:{show:<span class="literal">true</span>}, data:{Service:<span class="number">12500746</span>,Agricultural:<span class="number">188217</span>,Industrial:<span class="number">2995787</span>}, label:<span class="string">'United States'</span>},
+    {bars:{show:<span class="literal">true</span>}, data:{Service:<span class="number">3669259</span>,Agricultural:<span class="number">830931</span>,Industrial:<span class="number">3726848</span>}, label:<span class="string">'China'</span>},
+    {bars:{show:<span class="literal">true</span>}, data:{Service:<span class="number">4258274</span>,Agricultural:<span class="number">71568</span>,Industrial:<span class="number">1640091</span>}, label:<span class="string">'Japan'</span>},
+    {bars:{show:<span class="literal">true</span>}, data:{Service:<span class="number">2417812</span>,Agricultural:<span class="number">27205</span>,NotKnown:<span class="number">955563</span>}, label:<span class="string">'Other'</span>}
+  ],
+  ytype:<span class="string">'number'</span>,
+  legend: {sorted:<span class="string">'ascending'</span>},
+  xtype:<span class="string">'string'</span>,
+  charttype:<span class="string">'bar'</span>
+});</code></pre>
 
             </div>
         </fieldset>
@@ -312,18 +309,17 @@ $(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseou
 &lt;a href=&quot;#&quot; onclick=&quot;$(&#39;#zoom&#39;).chart(&#39;resetZoom&#39;); return false;&quot;&gt;Reset zoom&lt;/a&gt;</code></pre>
 
                 <pre><code class="language-js">$(<span class="string">'#zoom'</span>).chart(
-    {
-        data: [
-            {color:<span class="string">'darkcyan'</span>,data:[[<span class="number">1</span>,<span class="number">8</span>],[<span class="number">2</span>,<span class="number">12</span>],[<span class="number">3</span>,<span class="number">13</span>],[<span class="number">4</span>,<span class="number">14</span>],[<span class="number">5</span>,<span class="number">16</span>],[<span class="number">6</span>,<span class="number">18</span>],[<span class="number">7</span>,<span class="number">15</span>],[<span class="number">8</span>,<span class="number">20</span>],[<span class="number">9</span>,<span class="number">21</span>],[<span class="number">10</span>,<span class="number">15</span>],[<span class="number">12</span>,<span class="number">16</span>],[<span class="number">13</span>,<span class="number">18</span>],[<span class="number">14</span>,<span class="number">20</span>]],
-                lines:{show:<span class="literal">true</span>},label:<span class="string">'A product'</span>,points:{symbol:<span class="string">'square'</span> ,show:<span class="literal">true</span>}},
-            {color:<span class="string">'chocolate'</span>,data:[[<span class="number">2</span>,<span class="number">6</span>],[<span class="number">3</span>,<span class="number">10</span>],[<span class="number">4</span>,<span class="number">11</span>],[<span class="number">5</span>,<span class="number">12</span>],[<span class="number">6</span>,<span class="number">15</span>],[<span class="number">7</span>,<span class="number">16</span>],[<span class="number">8</span>,<span class="number">14</span>],[<span class="number">9</span>,<span class="number">14</span>],[<span class="number">10</span>,<span class="number">14</span>]],
-                lines:{show:<span class="literal">true</span>},label:<span class="string">'B product'</span>,points:{show:<span class="literal">true</span>}},
-            {color:<span class="string">'coral'</span>,data:[[<span class="number">2</span>,<span class="number">6</span>],[<span class="number">3</span>,<span class="number">8</span>],[<span class="number">5</span>,<span class="number">4</span>],[<span class="number">10</span>,<span class="number">6</span>],[<span class="number">14</span>,<span class="number">8</span>],[<span class="number">15</span>,<span class="number">4</span>]],
-                lines:{show:<span class="literal">true</span>},label:<span class="string">'C product'</span>,points:{symbol:<span class="string">'diamond'</span>,show:<span class="literal">true</span>}}
-        ],
-        ytype:<span class="string">'class java.lang.Number'</span>,legend:{sorted:<span class="string">'ascending'</span>},zoom:<span class="literal">true</span>,xtype:<span class="string">'class java.lang.Number'</span>,charttype:<span class="string">'line'</span>
-    }
-
+  {
+    data: [
+      {color:<span class="string">'darkcyan'</span>,data:[[<span class="number">1</span>,<span class="number">8</span>],[<span class="number">2</span>,<span class="number">12</span>],[<span class="number">3</span>,<span class="number">13</span>],[<span class="number">4</span>,<span class="number">14</span>],[<span class="number">5</span>,<span class="number">16</span>],[<span class="number">6</span>,<span class="number">18</span>],[<span class="number">7</span>,<span class="number">15</span>],[<span class="number">8</span>,<span class="number">20</span>],[<span class="number">9</span>,<span class="number">21</span>],[<span class="number">10</span>,<span class="number">15</span>],[<span class="number">12</span>,<span class="number">16</span>],[<span class="number">13</span>,<span class="number">18</span>],[<span class="number">14</span>,<span class="number">20</span>]],
+       lines:{show:<span class="literal">true</span>},label:<span class="string">'A product'</span>,points:{symbol:<span class="string">'square'</span> ,show:<span class="literal">true</span>}},
+      {color:<span class="string">'chocolate'</span>,data:[[<span class="number">2</span>,<span class="number">6</span>],[<span class="number">3</span>,<span class="number">10</span>],[<span class="number">4</span>,<span class="number">11</span>],[<span class="number">5</span>,<span class="number">12</span>],[<span class="number">6</span>,<span class="number">15</span>],[<span class="number">7</span>,<span class="number">16</span>],[<span class="number">8</span>,<span class="number">14</span>],[<span class="number">9</span>,<span class="number">14</span>],[<span class="number">10</span>,<span class="number">14</span>]],
+       lines:{show:<span class="literal">true</span>},label:<span class="string">'B product'</span>,points:{show:<span class="literal">true</span>}},
+      {color:<span class="string">'coral'</span>,data:[[<span class="number">2</span>,<span class="number">6</span>],[<span class="number">3</span>,<span class="number">8</span>],[<span class="number">5</span>,<span class="number">4</span>],[<span class="number">10</span>,<span class="number">6</span>],[<span class="number">14</span>,<span class="number">8</span>],[<span class="number">15</span>,<span class="number">4</span>]],
+       lines:{show:<span class="literal">true</span>},label:<span class="string">'C product'</span>,points:{symbol:<span class="string">'diamond'</span>,show:<span class="literal">true</span>}}
+    ],
+    ytype:<span class="string">'number'</span>,legend:{sorted:<span class="string">'ascending'</span>},zoom:<span class="literal">true</span>,xtype:<span class="string">'number'</span>,charttype:<span class="string">'line'</span>
+  }
 );</code></pre>
 
             </div>
