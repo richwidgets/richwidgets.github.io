@@ -103,9 +103,12 @@
 <h2>Testing</h2>
 <p>In the rapid evolving world of Web standards, libraries, and browsers testing is of paramount importance.  We need to make
 sure our widgets continue to function as we upgrade the various libraries that make up our project.</p>
-<p>RichWidgets uses <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="http://karma-runner.github.io/">jasmine-jquery)(<a href="https://github.com/velesin/jasmine-jquery">https://github.com/velesin/jasmine-jquery</a>),
-using [karma</a> as our test runner.  Widget tests must go beyond simple setup/takedown of the widgets,
+<p>RichWidgets uses <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/velesin/jasmine-jquery">jasmine-jquery</a>,
+using <a href="http://karma-runner.github.io/">karma</a> as our test runner.  Widget tests must go beyond simple setup/takedown of the widgets,
 and must also test all widget options and user interactions.  In this way we will be able to keep our widgets both current and stable.</p>
+<h3>Installing Karma</h3>
+<p><em>The Karma tool can be easily installed with NPM as:</em></p>
+<pre><code>npm install -g karma</code></pre>
 <h3>Running Test Suite</h3>
 <p><em>Run all tests on particular browsers:</em></p>
 <pre><code>karma start karma.conf.js --browsers=PhantomJS,Chrome,Firefox</code></pre>
@@ -119,6 +122,13 @@ and must also test all widget options and user interactions.  In this way we wil
 <li>or rename the specification from <code>describe</code> to <code>ddescribe</code></li>
 </ul>
 </li>
+</ul>
+<p><em>Debugging tests:</em></p>
+<ul>
+<li>Write <code>debugger;</code> anywhere in your test to set a breakpoint.</li>
+<li>Run the test suite with <code>--single-run=false --auto-watch=true</code> options.</li>
+<li>In a browser window open a console.</li>
+<li>Refresh the browser tab. It should stop the execution on the defined breakpoint.</li>
 </ul>
 <h3>Test Configuration</h3>
 <p>Tests are configured in two files:</p>
