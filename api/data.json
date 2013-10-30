@@ -4,7 +4,7 @@
         "description": "Standalone javascript widgets",
         "logo": "../logo.png",
         "version": "0.0.1-wip",
-        "url": "http://richwidgets.github.io"
+        "url": "http://richwidgets.io"
     },
     "files": {
         "src/widgets/input/autocomplete.js": {
