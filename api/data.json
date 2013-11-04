@@ -13,7 +13,7 @@
                 "Input": 1
             },
             "classes": {
-                "richAutocomplete": 1
+                "autocomplete": 1
             },
             "fors": {},
             "namespaces": {}
@@ -55,14 +55,14 @@
             "name": "Input",
             "submodules": {},
             "classes": {
-                "richAutocomplete": 1
+                "autocomplete": 1
             },
             "fors": {},
             "namespaces": {},
             "tag": "module",
             "file": "src/widgets/input/autocomplete.js",
             "line": 1,
-            "description": "An autocomplete widget"
+            "description": "Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.\n\nThe widget is based on popular jQuery UI Autocomplete widget, but it brings some advanced built-in features:\n\n* caching\n* tokenizing\n* using DOM as a source of suggestions\n* auto-fill\n* built-in button"
         },
         "Output": {
             "name": "Output",
@@ -93,9 +93,9 @@
         }
     },
     "classes": {
-        "richAutocomplete": {
-            "name": "richAutocomplete",
-            "shortname": "richAutocomplete",
+        "autocomplete": {
+            "name": "autocomplete",
+            "shortname": "autocomplete",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -105,7 +105,7 @@
             "namespace": "",
             "file": "src/widgets/input/autocomplete.js",
             "line": 1,
-            "description": "An autocomplete widget"
+            "description": "Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.\n\nThe widget is based on popular jQuery UI Autocomplete widget, but it brings some advanced built-in features:\n\n* caching\n* tokenizing\n* using DOM as a source of suggestions\n* auto-fill\n* built-in button"
         },
         "chart": {
             "name": "chart",
@@ -153,60 +153,327 @@
     "classitems": [
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 43,
-            "description": "cached turns caching on",
+            "line": 30,
+            "description": "The delay in milliseconds between when a keystroke occurs and when a search is performed. A zero-delay makes sense for local data (more responsive), but can produce a lot of load for remote data, while being less responsive.",
+            "itemtype": "property",
+            "name": "delay",
+            "type": "Integer",
+            "default": "0",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 39,
+            "description": "Allows to repeat auto-completion several times by using separator between words.\n\nYou can provide multiple tokens.",
+            "itemtype": "property",
+            "name": "token",
+            "type": "String",
+            "default": "null",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 50,
+            "description": "Allows to append a button to the input to allow opening suggestion box by mouse.",
+            "itemtype": "property",
+            "name": "showButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 59,
+            "description": "Auto focusing mode selects first suggestion in a list once it appears, so user can just confirm it using enter key.",
+            "itemtype": "property",
+            "name": "autoFocus",
+            "type": "Boolean",
+            "default": "false",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 68,
+            "description": "Auto filling mode previews a selected suggestion in the input as a user types.",
+            "itemtype": "property",
+            "name": "autoFill",
+            "type": "Boolean",
+            "default": "false",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 77,
+            "description": "Defines the data to use, must be specified.\n\n**Multiple types supported:**\n\n* **Array:** An array can be used for local data.There are two supported formats:\n   * An array of strings: `[ \"Choice1\", \"Choice2\" ]`\n   * An array of objects with `label` and `value` properties: `[ { label: \"Choice1\", value: \"value1\" }, ... ]`\n\n   The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for both, e.g., if you provide only value properties, the value will also be used as the label.\n\n* **String:** When a string is used, the Autocomplete plugin expects that string to point to a URL resource that will return JSON data. It can be on the same host or on a different one (must provide JSONP). The Autocomplete plugin does not filter the results, instead a query string is added with a term field, which the server-side script should use for filtering the results. For example, if the source option is set to \"http://example.com\" and the user types foo, a GET request would be made to http://example.com?term=foo. The data itself can be in the same format as the local data described above.\n\n* **Function:** The third variation, a callback, provides the most flexibility and can be used to connect any data source to Autocomplete. The callback gets two arguments:\n   * A request object, with a single term property, which refers to the value currently in the text input. For example, if the user enters \"new yo\" in a city field, the Autocomplete term will equal \"new yo\".\n   * A response callback, which expects a single argument: the data to suggest to the user. This data should be filtered based on the provided term, and can be in any of the formats described above for simple local data. It's important when providing a custom source callback to handle errors during the request. You must always call the response callback even if you encounter an error. This ensures that the widget always has the correct state.\n\n   When filtering data locally, you can make use of the built-in $.ui.autocomplete.escapeRegex function. It'll take a single string argument and escape all regex characters, making the result safe to pass to new RegExp().",
+            "itemtype": "property",
+            "name": "source",
+            "required": 1,
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 101,
+            "description": "The minimum number of characters a user must type before a search is performed. Zero is useful for local data with just a few items, but a higher value should be used when a single character search could match a few thousand items.",
+            "itemtype": "property",
+            "name": "minLength",
+            "type": "Number",
+            "default": "0",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 110,
+            "description": "Turns suggestions caching on.\n\nIn caching mode, autocomplete first tries to look suggestions for given term up in cache given by\n`cacheImplementation` option and if no suggestions are found, autocomplete uses classic `source`\nto retrieve suggestions.",
             "itemtype": "property",
             "name": "cached",
             "type": "Boolean",
             "default": "false",
-            "class": "richAutocomplete",
+            "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 51,
-            "description": "defines what prefix of searchTerm will be used to query cache",
+            "line": 123,
+            "description": "Allows to plug in implementation of cache, which in turn allows to use stores like Local Storage\nfor remembering values.\n\n`cacheImplementation` is an class with two methods:\n\n- `function get(searchTerm)` - returns all cached suggestions for given searchTerm prefix\n- `function set(searchTerm, suggestions)` - stores all provided suggestions into cache under given searchTerm prefix",
             "itemtype": "property",
-            "name": "extractCacheSearchPrefix",
-            "type": "String",
-            "class": "richAutocomplete",
-            "module": "Input"
-        },
-        {
-            "file": "src/widgets/input/autocomplete.js",
-            "line": 58,
-            "description": "pluggable cache cacheImplemenation",
-            "itemtype": "property",
-            "name": "cached",
+            "name": "cacheImplementation",
             "type": "Object",
-            "class": "richAutocomplete",
+            "default": "$.rich.autocomplete.ObjectCache",
+            "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 65,
-            "description": "Provide function which will be used to filter array of suggestions by given searchTerm\nfunction filter(array, searchTerm)",
+            "line": 138,
+            "description": "Function that determines what prefix of search term will be used to query a cache:\n\n`function cachePrefixExtract(searchTerm)` - default implementation extracts first `minLength` characters of a search term",
+            "itemtype": "property",
+            "name": "cachePrefixExtract",
+            "type": "Function",
+            "default": "$.rich.autocomplete.cachePrefixExtract",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 149,
+            "description": "Provide function which will be used to filter array of suggestions by given searchTerm:\n\n`function filter(array, searchTerm)`",
             "itemtype": "property",
             "name": "filter",
-            "type": "Object",
-            "class": "richAutocomplete",
-            "module": "Input"
-        },
-        {
-            "file": "src/widgets/input/autocomplete.js",
-            "line": 73,
-            "description": "Function called when search triggered but before suggestions are composed.\n\nIt gives chance to update source of suggestions as reflection to current search term.\n\nfunction({ term: currentSearchTerm }, doneCallback)\n\nwhen doneCallback is specified, autocomplete will wait with update of suggestions before doneCallback\nis called. Usually it is called on the end of AJAX data update.",
-            "itemtype": "property",
-            "name": "update",
             "type": "Function",
-            "class": "richAutocomplete",
+            "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 431,
-            "description": "Default implementation of extracting searchTerm prefix for checking cache",
-            "class": "richAutocomplete",
+            "line": 161,
+            "description": "Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body.",
+            "itemtype": "property",
+            "name": "appendTo",
+            "type": "Selector",
+            "default": "null",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 169,
+            "description": "Disables the autocomplete if set to true.",
+            "itemtype": "property",
+            "name": "disabled",
+            "type": "Boolean",
+            "default": "false",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 177,
+            "description": "Identifies the position of the suggestions menu in relation to the associated input element. The of option defaults to the input element, but you can specify another element to position against. You can refer to the jQuery UI Position utility for more details about the various options.",
+            "itemtype": "property",
+            "name": "position",
+            "type": "Object",
+            "default": "`{ my: \"left top\", at: \"left bottom\", collision: \"none\" }`",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 187,
+            "description": "Triggered when search is triggered but before raw suggestions are parsed/processed.\n\nIt gives chance to update `source` of suggestions as reflection to current search term.\n\nfunction update(request [, doneCallback])\n\n* `request` is object which contains search term: `{ term: 'searchTerm' }`\n* when `doneCallback` is provided, widget will wait until `doneCallback` is called. Usually it is called on the end of AJAX data update.",
+            "itemtype": "event",
+            "name": "update",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 203,
+            "description": "Triggered when the field is blurred, if the value has changed.",
+            "itemtype": "event",
+            "name": "change",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 209,
+            "description": "Triggered when the menu is hidden. Not every close event will be accompanied by a change event.",
+            "itemtype": "event",
+            "name": "close",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 215,
+            "description": "Triggered when the autocomplete is created.",
+            "itemtype": "event",
+            "name": "create",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 221,
+            "description": "Triggered when focus is moved to an item (not selecting).\nThe default action is to replace the text field's value with the value of the focused item, though only if the event was triggered by a keyboard interaction.\nCanceling this event prevents the value from being updated, but does not prevent the menu item from being focused.",
+            "itemtype": "event",
+            "name": "focus",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 229,
+            "description": "Triggered when the suggestion menu is opened or updated.",
+            "itemtype": "event",
+            "name": "open",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 235,
+            "description": "Triggered after a search completes, before the menu is shown.\nUseful for local manipulation of suggestion data, where a custom source option callback is not required.\nThis event is always triggered when a search completes, even if the menu will not be shown because there are no results or the Autocomplete is disabled.",
+            "itemtype": "event",
+            "name": "response",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 243,
+            "description": "Triggered before a search is performed, after minLength and delay are met.\nIf canceled, then no request will be started and no items suggested.",
+            "itemtype": "event",
+            "name": "search",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 250,
+            "description": "Triggered when an item is selected from the menu.\nThe default action is to replace the text field's value with the value of the selected item.\nCanceling this event prevents the value from being updated, but does not prevent the menu from closing.",
+            "itemtype": "event",
+            "name": "select",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 332,
+            "description": "Closes the Autocomplete menu. Useful in combination with the search method, to close the open menu.",
+            "itemtype": "method",
+            "name": "close",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 338,
+            "description": "Removes the autocomplete functionality completely. This will return the element back to its pre-init state.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 344,
+            "description": "Disables the autocomplete.",
+            "itemtype": "method",
+            "name": "disable",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 350,
+            "description": "Enables the autocomplete.",
+            "itemtype": "method",
+            "name": "enable",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 356,
+            "description": "`option( optionName )`\n\nGets an object containing key/value pairs representing the current autocomplete options hash.\n\n`option()`\n\nGets an object containing key/value pairs representing the current autocomplete options hash.\n\n`option( optionName, value )`\n\nSets the value of the autocomplete option associated with the specified optionName.\n\n`option( options )`\n\nSets one or more options for the autocomplete.",
+            "itemtype": "method",
+            "name": "option",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 376,
+            "description": "Triggers a search event and invokes the data source if the event is not canceled.\nCan be used by a selectbox-like button to open the suggestions when clicked.\nWhen invoked with no parameters, the current input's value is used.",
+            "itemtype": "method",
+            "name": "search",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "optional",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 385,
+            "description": "Returns a jQuery object containing the menu element. Although the menu items are constantly created and destroyed, the menu element itself is created during initialization and is constantly reused.",
+            "itemtype": "method",
+            "name": "widget",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 420,
+            "override": "",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 427,
+            "override": "",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 437,
+            "override": "",
+            "class": "autocomplete",
             "module": "Input"
         },
         {
@@ -405,6 +672,15 @@
         {
             "file": "src/widgets/select/orderingList.js",
             "line": 139,
+            "description": "Fired after the orderingList has been created",
+            "itemtype": "event",
+            "name": "create",
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/orderingList.js",
+            "line": 145,
             "description": "Fired after the orderingList has been destroyed",
             "itemtype": "event",
             "name": "destroy",
@@ -413,7 +689,7 @@
         },
         {
             "file": "src/widgets/select/orderingList.js",
-            "line": 145,
+            "line": 151,
             "description": "Fired when the orderingList receives focus",
             "itemtype": "event",
             "name": "focus",
@@ -422,7 +698,7 @@
         },
         {
             "file": "src/widgets/select/orderingList.js",
-            "line": 151,
+            "line": 157,
             "description": "Fired when the orderingList loses focus",
             "itemtype": "event",
             "name": "blur",
@@ -431,7 +707,7 @@
         },
         {
             "file": "src/widgets/select/orderingList.js",
-            "line": 270,
+            "line": 275,
             "description": "Removes the orderingList functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
             "name": "destroy",
@@ -441,25 +717,25 @@
         },
         {
             "file": "src/widgets/select/orderingList.js",
-            "line": 454,
+            "line": 459,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/orderingList.js",
-            "line": 562,
+            "line": 567,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/orderingList.js",
-            "line": 787,
+            "line": 792,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/orderingList.js",
-            "line": 837,
+            "line": 846,
             "class": "orderingList",
             "module": "Select"
         },
@@ -641,6 +917,15 @@
         {
             "file": "src/widgets/select/pickList.js",
             "line": 147,
+            "description": "Fired after the pickList has been created",
+            "itemtype": "event",
+            "name": "create",
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pickList.js",
+            "line": 153,
             "description": "Fired after the pickList has been destroyed",
             "itemtype": "event",
             "name": "destroy",
@@ -649,7 +934,7 @@
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 153,
+            "line": 159,
             "description": "Fired when the pickList receives focus",
             "itemtype": "event",
             "name": "focus",
@@ -658,7 +943,7 @@
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 159,
+            "line": 165,
             "description": "Fired when the pickList loses focus",
             "itemtype": "event",
             "name": "blur",
@@ -667,7 +952,7 @@
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 214,
+            "line": 219,
             "description": "Removes the pickList functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
             "name": "destroy",
@@ -677,13 +962,13 @@
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 236,
+            "line": 241,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 238,
+            "line": 243,
             "description": "Move items from the target list of the pickList to the source list.",
             "params": [
                 {
@@ -705,7 +990,7 @@
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 257,
+            "line": 262,
             "description": "Move items from the source list of the pickList to the target list.",
             "params": [
                 {
@@ -727,59 +1012,79 @@
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 277,
+            "line": 282,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 582,
+            "line": 587,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pickList.js",
-            "line": 592,
+            "line": 597,
             "class": "pickList",
             "module": "Select"
         }
     ],
     "warnings": [
         {
-            "message": "Missing item type\nDefault implementation of extracting searchTerm prefix for checking cache",
-            "line": " src/widgets/input/autocomplete.js:431"
+            "message": "unknown tag: override",
+            "line": " src/widgets/input/autocomplete.js:420"
+        },
+        {
+            "message": "unknown tag: override",
+            "line": " src/widgets/input/autocomplete.js:427"
+        },
+        {
+            "message": "unknown tag: override",
+            "line": " src/widgets/input/autocomplete.js:437"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:454"
+            "line": " src/widgets/input/autocomplete.js:420"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:562"
+            "line": " src/widgets/input/autocomplete.js:427"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:787"
+            "line": " src/widgets/input/autocomplete.js:437"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:837"
+            "line": " src/widgets/select/orderingList.js:459"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:236"
+            "line": " src/widgets/select/orderingList.js:567"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:277"
+            "line": " src/widgets/select/orderingList.js:792"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:582"
+            "line": " src/widgets/select/orderingList.js:846"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:592"
+            "line": " src/widgets/select/pickList.js:241"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/pickList.js:282"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/pickList.js:587"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src/widgets/select/pickList.js:597"
         }
     ]
 }

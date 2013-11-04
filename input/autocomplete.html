@@ -125,7 +125,7 @@
 
         <pre><code class="language-js"><span class="keyword">var</span> source = [ <span class="string">'ActionScript'</span>, <span class="string">'AppleScript'</span>, <span class="string">'Asp'</span>, <span class="string">'BASIC'</span>, <span class="string">'C'</span>, <span class="string">'C++'</span>, <span class="string">'Clojure'</span>, <span class="string">'Ceylon'</span>, <span class="string">'COBOL'</span>, <span class="string">'ColdFusion'</span>, <span class="string">'Erlang'</span>, <span class="string">'Fortran'</span>, <span class="string">'Groovy'</span>, <span class="string">'Haskell'</span>, <span class="string">'Java'</span>, <span class="string">'JavaScript'</span>, <span class="string">'Lisp'</span>, <span class="string">'Perl'</span>, <span class="string">'PHP'</span>, <span class="string">'Python'</span>, <span class="string">'Ruby'</span>, <span class="string">'Scala'</span>, <span class="string">'Scheme'</span> ];
 
-$(<span class="string">'#json-source'</span>).richAutocomplete({ source: source });</code></pre>
+$(<span class="string">'#json-source'</span>).autocomplete({ source: source });</code></pre>
 
       </div>
 
@@ -139,7 +139,7 @@ $(<span class="string">'#json-source'</span>).richAutocomplete({ source: source 
 </div>-->
       <!--<div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> source = [ <span class="string">'ActionScript'</span>, <span class="string">'AppleScript'</span>, <span class="string">'Asp'</span>, <span class="string">'BASIC'</span>, <span class="string">'C'</span>, <span class="string">'C++'</span>, <span class="string">'Clojure'</span>, <span class="string">'Ceylon'</span>, <span class="string">'COBOL'</span>, <span class="string">'ColdFusion'</span>, <span class="string">'Erlang'</span>, <span class="string">'Fortran'</span>, <span class="string">'Groovy'</span>, <span class="string">'Haskell'</span>, <span class="string">'Java'</span>, <span class="string">'JavaScript'</span>, <span class="string">'Lisp'</span>, <span class="string">'Perl'</span>, <span class="string">'PHP'</span>, <span class="string">'Python'</span>, <span class="string">'Ruby'</span>, <span class="string">'Scala'</span>, <span class="string">'Scheme'</span> ];
 
-$(<span class="string">'#json-source'</span>).richAutocomplete({ source: source });</code></pre>
+$(<span class="string">'#json-source'</span>).autocomplete({ source: source });</code></pre>
 </div>-->
     <!--</div>-->
   </fieldset>
@@ -184,7 +184,7 @@ $(<span class="string">'#json-source'</span>).richAutocomplete({ source: source 
   }, <span class="number">1000</span>);
 };
 
-$(<span class="string">'#function-source'</span>).richAutocomplete({ source: asyncSuggest });</code></pre>
+$(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSuggest });</code></pre>
 
       </div>
 
@@ -202,7 +202,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
   }, <span class="number">1000</span>);
 };
 
-$(<span class="string">'#function-source'</span>).richAutocomplete({ source: asyncSuggest });</code></pre>
+$(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSuggest });</code></pre>
 </div>-->
     <!--</div>-->
   </fieldset>
@@ -242,7 +242,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
   &lt;li&gt;&lt;i class=&quot;icon-flag&quot;&gt;&lt;/i&gt; Haskell&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#list-source'</span>).richAutocomplete({ source: <span class="string">'#list-suggestions'</span> });</code></pre>
+        <pre><code class="language-js">$(<span class="string">'#list-source'</span>).autocomplete({ source: <span class="string">'#list-suggestions'</span> });</code></pre>
 
       </div>
 
@@ -259,7 +259,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
   &lt;li&gt;&lt;i class=&quot;icon-flag&quot;&gt;&lt;/i&gt; Haskell&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#list-source'</span>).richAutocomplete({ source: <span class="string">'#list-suggestions'</span> });</code></pre>
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#list-source'</span>).autocomplete({ source: <span class="string">'#list-suggestions'</span> });</code></pre>
 </div>-->
     <!--</div>-->
   </fieldset>
@@ -317,7 +317,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#table-source'</span>).richAutocomplete({ source: <span class="string">'#table-suggestions'</span> });</code></pre>
+        <pre><code class="language-js">$(<span class="string">'#table-source'</span>).autocomplete({ source: <span class="string">'#table-suggestions'</span> });</code></pre>
 
       </div>
 
@@ -344,7 +344,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#table-source'</span>).richAutocomplete({ source: <span class="string">'#table-suggestions'</span> });</code></pre>
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#table-source'</span>).autocomplete({ source: <span class="string">'#table-suggestions'</span> });</code></pre>
 </div>-->
     <!--</div>-->
   </fieldset>
@@ -369,7 +369,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
 
 <p>One need to provide <tt>cached</tt> flag and setup <tt>minLength</tt> which declares how long the user input needs to be to reach server.</p>
 
-<p>It is also possible to pass custom caching provider using <tt>cacheImplemenation</tt> option. Default implementation is <tt>$.ui.richAutocomplete.objectCache</tt>.</p>
+<p>It is also possible to pass custom caching provider using <tt>cacheImplemenation</tt> option. Default implementation is <tt>$.ui.autocomplete.objectCache</tt>.</p>
           </div>
         </div>
       </div>
@@ -378,7 +378,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
         
         <pre><code class="language-html">&lt;input id=&quot;cached&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#cached'</span>).richAutocomplete({
+        <pre><code class="language-js">$(<span class="string">'#cached'</span>).autocomplete({
   cached: <span class="literal">true</span>,
   minLength: <span class="number">2</span>,
   source: <span class="function"><span class="keyword">function</span> <span class="params">(request, response)</span> {</span>
@@ -398,7 +398,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
       <!---->
       <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;cached&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#cached'</span>).richAutocomplete({
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#cached'</span>).autocomplete({
   cached: <span class="literal">true</span>,
   minLength: <span class="number">2</span>,
   source: <span class="function"><span class="keyword">function</span> <span class="params">(request, response)</span> {</span>
@@ -434,7 +434,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
         
         <pre><code class="language-html">&lt;input id=&quot;auto-focus&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#auto-focus'</span>).richAutocomplete({ source: source, autoFocus: <span class="literal">true</span> });</code></pre>
+        <pre><code class="language-js">$(<span class="string">'#auto-focus'</span>).autocomplete({ source: source, autoFocus: <span class="literal">true</span> });</code></pre>
 
       </div>
 
@@ -446,7 +446,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
       <!---->
       <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;auto-focus&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-focus'</span>).richAutocomplete({ source: source, autoFocus: <span class="literal">true</span> });</code></pre>
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-focus'</span>).autocomplete({ source: source, autoFocus: <span class="literal">true</span> });</code></pre>
 </div>-->
     <!--</div>-->
   </fieldset>
@@ -474,7 +474,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
         
         <pre><code class="language-html">&lt;input id=&quot;auto-fill&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#auto-fill'</span>).richAutocomplete({ source: source, autoFill: <span class="literal">true</span> });</code></pre>
+        <pre><code class="language-js">$(<span class="string">'#auto-fill'</span>).autocomplete({ source: source, autoFill: <span class="literal">true</span> });</code></pre>
 
       </div>
 
@@ -486,7 +486,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
       <!---->
       <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;auto-fill&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-fill'</span>).richAutocomplete({ source: source, autoFill: <span class="literal">true</span> });</code></pre>
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-fill'</span>).autocomplete({ source: source, autoFill: <span class="literal">true</span> });</code></pre>
 </div>-->
     <!--</div>-->
   </fieldset>
@@ -514,7 +514,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
         
         <pre><code class="language-html">&lt;input id=&quot;auto-focus-fill&quot; type=&quot;text&quot; class=&quot;form-control&quot;&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#auto-focus-fill'</span>).richAutocomplete({ source: source, autoFocus: <span class="literal">true</span>, autoFill: <span class="literal">true</span> });</code></pre>
+        <pre><code class="language-js">$(<span class="string">'#auto-focus-fill'</span>).autocomplete({ source: source, autoFocus: <span class="literal">true</span>, autoFill: <span class="literal">true</span> });</code></pre>
 
       </div>
 
@@ -526,7 +526,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
       <!---->
       <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;auto-focus-fill&quot; type=&quot;text&quot; class=&quot;form-control&quot;&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-focus-fill'</span>).richAutocomplete({ source: source, autoFocus: <span class="literal">true</span>, autoFill: <span class="literal">true</span> });</code></pre>
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-focus-fill'</span>).autocomplete({ source: source, autoFocus: <span class="literal">true</span>, autoFill: <span class="literal">true</span> });</code></pre>
 </div>-->
     <!--</div>-->
   </fieldset>
@@ -554,7 +554,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
         
         <pre><code class="language-html">&lt;input id=&quot;token&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#token'</span>).richAutocomplete({
+        <pre><code class="language-js">$(<span class="string">'#token'</span>).autocomplete({
   source: source,
   token: <span class="string">','</span>,
   minLength: <span class="number">1</span>
@@ -570,7 +570,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
       <!---->
       <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;token&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#token'</span>).richAutocomplete({
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#token'</span>).autocomplete({
   source: source,
   token: <span class="string">','</span>,
   minLength: <span class="number">1</span>
@@ -602,7 +602,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
         
         <pre><code class="language-html">&lt;input id=&quot;button&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 
-        <pre><code class="language-js">$(<span class="string">'#button'</span>).richAutocomplete({
+        <pre><code class="language-js">$(<span class="string">'#button'</span>).autocomplete({
   source: source,
   showButton: <span class="literal">true</span>
 });</code></pre>
@@ -617,7 +617,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
       <!---->
       <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;button&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
 </div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#button'</span>).richAutocomplete({
+      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#button'</span>).autocomplete({
   source: source,
   showButton: <span class="literal">true</span>
 });</code></pre>
@@ -671,7 +671,7 @@ $(<span class="string">'#function-source'</span>).richAutocomplete({ source: asy
   $(<span class="string">'#updatable-suggestions'</span>).append($(<span class="string">'&lt;li&gt;Test'</span> + counter++ + <span class="string">'&lt;/li&gt;'</span>));
 }
 
-$(<span class="string">'#updatable'</span>).richAutocomplete({
+$(<span class="string">'#updatable'</span>).autocomplete({
   source: <span class="string">'#updatable-suggestions'</span>,
   update: <span class="function"><span class="keyword">function</span> <span class="params">(request, done)</span> {</span>
     setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
@@ -702,7 +702,7 @@ $(<span class="string">'#updatable'</span>).richAutocomplete({
   $(<span class="string">'#updatable-suggestions'</span>).append($(<span class="string">'&lt;li&gt;Test'</span> + counter++ + <span class="string">'&lt;/li&gt;'</span>));
 }
 
-$(<span class="string">'#updatable'</span>).richAutocomplete({
+$(<span class="string">'#updatable'</span>).autocomplete({
   source: <span class="string">'#updatable-suggestions'</span>,
   update: <span class="function"><span class="keyword">function</span> <span class="params">(request, done)</span> {</span>
     setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>

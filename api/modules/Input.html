@@ -29,7 +29,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/chart", "classes/orderingList", "classes/pickList", "classes/richAutocomplete", "modules/Input", "modules/Output", "modules/Select"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/autocomplete", "classes/chart", "classes/orderingList", "classes/pickList", "modules/Input", "modules/Output", "modules/Select"]'>
         </form>
     </div>
 </div>
@@ -52,13 +52,13 @@
             <div class="tab-pane active" id="classes">
                 <ul id="api-classes" class="nav nav-list">
                     
+                        <li><a href="../classes/autocomplete.html">autocomplete</a></li>
+                    
                         <li><a href="../classes/chart.html">chart</a></li>
                     
                         <li><a href="../classes/orderingList.html">orderingList</a></li>
                     
                         <li><a href="../classes/pickList.html">pickList</a></li>
-                    
-                        <li><a href="../classes/richAutocomplete.html">richAutocomplete</a></li>
                     
                 </ul>
             </div>
@@ -128,7 +128,15 @@
 
 
 <div class="moduledesc well well-small">
-    <p>An autocomplete widget</p>
+    <p>Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.</p>
+<p>The widget is based on popular jQuery UI Autocomplete widget, but it brings some advanced built-in features:</p>
+<ul>
+<li>caching</li>
+<li>tokenizing</li>
+<li>using DOM as a source of suggestions</li>
+<li>auto-fill</li>
+<li>built-in button</li>
+</ul>
 
 </div>
 
@@ -142,8 +150,8 @@
             <ul class="module-classes">
             
                 <li class="module-class">
-                    <a href="../classes/richAutocomplete.html">
-                        richAutocomplete
+                    <a href="../classes/autocomplete.html">
+                        autocomplete
                     </a>
                 </li>
             

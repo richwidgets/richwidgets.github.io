@@ -29,7 +29,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/chart", "classes/orderingList", "classes/pickList", "classes/richAutocomplete", "modules/Input", "modules/Output", "modules/Select"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/autocomplete", "classes/chart", "classes/orderingList", "classes/pickList", "modules/Input", "modules/Output", "modules/Select"]'>
         </form>
     </div>
 </div>
@@ -52,13 +52,13 @@
             <div class="tab-pane active" id="classes">
                 <ul id="api-classes" class="nav nav-list">
                     
+                        <li><a href="../classes/autocomplete.html">autocomplete</a></li>
+                    
                         <li><a href="../classes/chart.html">chart</a></li>
                     
                         <li><a href="../classes/orderingList.html">orderingList</a></li>
                     
                         <li><a href="../classes/pickList.html">pickList</a></li>
-                    
-                        <li><a href="../classes/richAutocomplete.html">richAutocomplete</a></li>
                     
                 </ul>
             </div>
@@ -252,6 +252,12 @@
        */
       addDomElements: null,
       /**
+       * Fired after the orderingList has been created
+       *
+       * @event create
+       */
+      create: null,
+      /**
        * Fired after the orderingList has been destroyed
        *
        * @event destroy
@@ -379,7 +385,6 @@
       if (this.options.heightMax !== null) {
         this._setHeightMax(this.options.heightMax);
       }
-      this._trigger(&#x27;create&#x27;, undefined, this._dumpState());
     },
 
     /**
@@ -924,6 +929,10 @@
       if (this.options.dragSelect === true) {
         this.content.removeClass(&#x27;with-handle&#x27;);
         this.element.find(&#x27;.handle&#x27;).remove();
+      }
+      if (this.options.disabled === true) {
+        this.element.removeClass(&#x27;disabled&#x27;);
+        this.element.find(&#x27;.ui-disabled&#x27;).removeClass(&#x27;ui-disabled&#x27;);
       }
       this.element.removeClass(&#x27;list&#x27;);
     },
