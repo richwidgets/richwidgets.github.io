@@ -71,11 +71,11 @@
               
             
               
-                <li ><a href="../select/orderingList.html">OrderingList</a></li>
+                <li ><a href="../select/ordering-list.html">OrderingList</a></li>
               
             
               
-                <li ><a href="../select/pickList.html">PickList</a></li>
+                <li ><a href="../select/pick-list.html">PickList</a></li>
               
             
               
@@ -125,13 +125,6 @@
 &lt;span id=&quot;hoverdata&quot;&gt;&lt;/span&gt;</code></pre>
 
                 <pre><code class="language-js">$(<span class="string">'#placeholder'</span>).chart({
-  handlers:{
-    onplotclick:<span class="keyword">function</span>(event){
-      $(<span class="string">'#clickdata'</span>).text(<span class="string">'click point '</span> +
-        event.data.dataIndex + <span class="string">' in '</span> +
-        event.data.item.series.label);
-    }
-  },
   data: [
     {data:[[<span class="number">1990</span>,<span class="number">19.1</span>],[<span class="number">1991</span>,<span class="number">18.9</span>],[<span class="number">1992</span>,<span class="number">18.6</span>],[<span class="number">1993</span>,<span class="number">19.5</span>],[<span class="number">1994</span>,<span class="number">19.5</span>],[<span class="number">1995</span>,<span class="number">19.3</span>],[<span class="number">1996</span>,<span class="number">19.4</span>],[<span class="number">1997</span>,<span class="number">19.7</span>],[<span class="number">1998</span>,<span class="number">19.5</span>],[<span class="number">1999</span>,<span class="number">19.5</span>],[<span class="number">2000</span>,<span class="number">20</span>]],label:<span class="string">'USA'</span>},
     {data:[[<span class="number">1990</span>,<span class="number">2.2</span>],[<span class="number">1991</span>,<span class="number">2.2</span>],[<span class="number">1992</span>,<span class="number">2.3</span>],[<span class="number">1993</span>,<span class="number">2.4</span>],[<span class="number">1994</span>,<span class="number">2.6</span>],[<span class="number">1995</span>,<span class="number">2.7</span>],[<span class="number">1996</span>,<span class="number">2.8</span>],[<span class="number">1997</span>,<span class="number">2.8</span>],[<span class="number">1998</span>,<span class="number">2.7</span>],[<span class="number">1999</span>,<span class="number">2.6</span>],[<span class="number">2000</span>,<span class="number">2.7</span>]],label:<span class="string">'China'</span>},
@@ -144,13 +137,13 @@
 });
 
 <span class="comment">/*Flot style of event binding*/</span>
-$(<span class="string">'#placeholder'</span>).bind(<span class="string">'plothover'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(event, pos, item)</span> {</span>
+$(<span class="string">'#placeholder'</span>).on(<span class="string">'plothover'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(event, pos, item)</span> {</span>
   <span class="keyword">if</span> (item) {
     $(<span class="string">'#hoverdata'</span>).text(<span class="string">'hover point '</span> + item.dataIndex + <span class="string">' in '</span> + item.series.label);
   }
 });
 
-$(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseout'</span>,<span class="keyword">function</span>(){$(<span class="string">'#hoverdata'</span>).text(<span class="string">''</span>);});</code></pre>
+$(<span class="string">'#placeholder'</span>).on(<span class="string">'mouseout'</span>,<span class="keyword">function</span>(){$(<span class="string">'#hoverdata'</span>).text(<span class="string">''</span>);});</code></pre>
 
             </div>
         </fieldset>
@@ -318,7 +311,11 @@ $(<span class="string">'#placeholder'</span>).bind(<span class="string">'mouseou
       {color:<span class="string">'coral'</span>,data:[[<span class="number">2</span>,<span class="number">6</span>],[<span class="number">3</span>,<span class="number">8</span>],[<span class="number">5</span>,<span class="number">4</span>],[<span class="number">10</span>,<span class="number">6</span>],[<span class="number">14</span>,<span class="number">8</span>],[<span class="number">15</span>,<span class="number">4</span>]],
        lines:{show:<span class="literal">true</span>},label:<span class="string">'C product'</span>,points:{symbol:<span class="string">'diamond'</span>,show:<span class="literal">true</span>}}
     ],
-    ytype:<span class="string">'number'</span>,legend:{sorted:<span class="string">'ascending'</span>},zoom:<span class="literal">true</span>,xtype:<span class="string">'number'</span>,charttype:<span class="string">'line'</span>
+    ytype:<span class="string">'number'</span>,
+    legend:{sorted:<span class="string">'ascending'</span>},
+    zoom:<span class="literal">true</span>,
+    xtype:<span class="string">'number'</span>,
+    charttype:<span class="string">'line'</span>
   }
 );</code></pre>
 

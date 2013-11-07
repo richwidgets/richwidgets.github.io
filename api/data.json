@@ -29,8 +29,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/widgets/select/orderingList.js": {
-            "name": "src/widgets/select/orderingList.js",
+        "src/widgets/select/ordering-list.js": {
+            "name": "src/widgets/select/ordering-list.js",
             "modules": {
                 "Select": 1
             },
@@ -40,8 +40,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "src/widgets/select/pickList.js": {
-            "name": "src/widgets/select/pickList.js",
+        "src/widgets/select/pick-list.js": {
+            "name": "src/widgets/select/pick-list.js",
             "modules": {},
             "classes": {
                 "pickList": 1
@@ -62,7 +62,10 @@
             "tag": "module",
             "file": "src/widgets/input/autocomplete.js",
             "line": 1,
-            "description": "Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.\n\nThe widget is based on popular jQuery UI Autocomplete widget, but it brings some advanced built-in features:\n\n* caching\n* tokenizing\n* using DOM as a source of suggestions\n* auto-fill\n* built-in button"
+            "description": "Autocomplete enables users to quickly find and select from a pre-populated list of values as they type, leveraging searching and filtering.\n\nThe widget is based on popular jQuery UI Autocomplete widget, but it brings some advanced built-in features:\n\n* caching\n* tokenizing\n* using DOM as a source of suggestions\n* auto-fill\n* built-in button",
+            "uses": [
+                "$.ui.autocomplete"
+            ]
         },
         "Output": {
             "name": "Output",
@@ -87,7 +90,7 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 1,
             "description": "A widget providing sorting capabilities for a list of elements"
         }
@@ -131,7 +134,7 @@
             "extension_for": [],
             "module": "Select",
             "namespace": "",
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 1,
             "description": "A widget providing sorting capabilities for a list of elements"
         },
@@ -145,7 +148,7 @@
             "extension_for": [],
             "module": "Select",
             "namespace": "",
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 1,
             "description": "A widget providing selection and sorting capabilities for a list of elements"
         }
@@ -153,7 +156,7 @@
     "classitems": [
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 30,
+            "line": 31,
             "description": "The delay in milliseconds between when a keystroke occurs and when a search is performed. A zero-delay makes sense for local data (more responsive), but can produce a lot of load for remote data, while being less responsive.",
             "itemtype": "property",
             "name": "delay",
@@ -164,7 +167,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 39,
+            "line": 40,
             "description": "Allows to repeat auto-completion several times by using separator between words.\n\nYou can provide multiple tokens.",
             "itemtype": "property",
             "name": "token",
@@ -175,7 +178,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 50,
+            "line": 51,
             "description": "Allows to append a button to the input to allow opening suggestion box by mouse.",
             "itemtype": "property",
             "name": "showButton",
@@ -186,7 +189,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 59,
+            "line": 60,
             "description": "Auto focusing mode selects first suggestion in a list once it appears, so user can just confirm it using enter key.",
             "itemtype": "property",
             "name": "autoFocus",
@@ -197,7 +200,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 68,
+            "line": 69,
             "description": "Auto filling mode previews a selected suggestion in the input as a user types.",
             "itemtype": "property",
             "name": "autoFill",
@@ -208,7 +211,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 77,
+            "line": 78,
             "description": "Defines the data to use, must be specified.\n\n**Multiple types supported:**\n\n* **Array:** An array can be used for local data.There are two supported formats:\n   * An array of strings: `[ \"Choice1\", \"Choice2\" ]`\n   * An array of objects with `label` and `value` properties: `[ { label: \"Choice1\", value: \"value1\" }, ... ]`\n\n   The label property is displayed in the suggestion menu. The value will be inserted into the input element when a user selects an item. If just one property is specified, it will be used for both, e.g., if you provide only value properties, the value will also be used as the label.\n\n* **String:** When a string is used, the Autocomplete plugin expects that string to point to a URL resource that will return JSON data. It can be on the same host or on a different one (must provide JSONP). The Autocomplete plugin does not filter the results, instead a query string is added with a term field, which the server-side script should use for filtering the results. For example, if the source option is set to \"http://example.com\" and the user types foo, a GET request would be made to http://example.com?term=foo. The data itself can be in the same format as the local data described above.\n\n* **Function:** The third variation, a callback, provides the most flexibility and can be used to connect any data source to Autocomplete. The callback gets two arguments:\n   * A request object, with a single term property, which refers to the value currently in the text input. For example, if the user enters \"new yo\" in a city field, the Autocomplete term will equal \"new yo\".\n   * A response callback, which expects a single argument: the data to suggest to the user. This data should be filtered based on the provided term, and can be in any of the formats described above for simple local data. It's important when providing a custom source callback to handle errors during the request. You must always call the response callback even if you encounter an error. This ensures that the widget always has the correct state.\n\n   When filtering data locally, you can make use of the built-in $.ui.autocomplete.escapeRegex function. It'll take a single string argument and escape all regex characters, making the result safe to pass to new RegExp().",
             "itemtype": "property",
             "name": "source",
@@ -218,7 +221,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 101,
+            "line": 102,
             "description": "The minimum number of characters a user must type before a search is performed. Zero is useful for local data with just a few items, but a higher value should be used when a single character search could match a few thousand items.",
             "itemtype": "property",
             "name": "minLength",
@@ -229,7 +232,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 110,
+            "line": 111,
             "description": "Turns suggestions caching on.\n\nIn caching mode, autocomplete first tries to look suggestions for given term up in cache given by\n`cacheImplementation` option and if no suggestions are found, autocomplete uses classic `source`\nto retrieve suggestions.",
             "itemtype": "property",
             "name": "cached",
@@ -240,7 +243,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 123,
+            "line": 124,
             "description": "Allows to plug in implementation of cache, which in turn allows to use stores like Local Storage\nfor remembering values.\n\n`cacheImplementation` is an class with two methods:\n\n- `function get(searchTerm)` - returns all cached suggestions for given searchTerm prefix\n- `function set(searchTerm, suggestions)` - stores all provided suggestions into cache under given searchTerm prefix",
             "itemtype": "property",
             "name": "cacheImplementation",
@@ -251,7 +254,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 138,
+            "line": 139,
             "description": "Function that determines what prefix of search term will be used to query a cache:\n\n`function cachePrefixExtract(searchTerm)` - default implementation extracts first `minLength` characters of a search term",
             "itemtype": "property",
             "name": "cachePrefixExtract",
@@ -262,7 +265,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 149,
+            "line": 150,
             "description": "Provide function which will be used to filter array of suggestions by given searchTerm:\n\n`function filter(array, searchTerm)`",
             "itemtype": "property",
             "name": "filter",
@@ -272,7 +275,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 161,
+            "line": 162,
             "description": "Which element the menu should be appended to. When the value is null, the parents of the input field will be checked for a class of ui-front. If an element with the ui-front class is found, the menu will be appended to that element. Regardless of the value, if no element is found, the menu will be appended to the body.",
             "itemtype": "property",
             "name": "appendTo",
@@ -283,7 +286,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 169,
+            "line": 171,
             "description": "Disables the autocomplete if set to true.",
             "itemtype": "property",
             "name": "disabled",
@@ -294,7 +297,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 177,
+            "line": 180,
             "description": "Identifies the position of the suggestions menu in relation to the associated input element. The of option defaults to the input element, but you can specify another element to position against. You can refer to the jQuery UI Position utility for more details about the various options.",
             "itemtype": "property",
             "name": "position",
@@ -305,7 +308,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 187,
+            "line": 191,
             "description": "Triggered when search is triggered but before raw suggestions are parsed/processed.\n\nIt gives chance to update `source` of suggestions as reflection to current search term.\n\nfunction update(request [, doneCallback])\n\n* `request` is object which contains search term: `{ term: 'searchTerm' }`\n* when `doneCallback` is provided, widget will wait until `doneCallback` is called. Usually it is called on the end of AJAX data update.",
             "itemtype": "event",
             "name": "update",
@@ -314,16 +317,17 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 203,
+            "line": 207,
             "description": "Triggered when the field is blurred, if the value has changed.",
             "itemtype": "event",
             "name": "change",
+            "override": "",
             "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 209,
+            "line": 216,
             "description": "Triggered when the menu is hidden. Not every close event will be accompanied by a change event.",
             "itemtype": "event",
             "name": "close",
@@ -332,7 +336,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 215,
+            "line": 223,
             "description": "Triggered when the autocomplete is created.",
             "itemtype": "event",
             "name": "create",
@@ -341,7 +345,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 221,
+            "line": 230,
             "description": "Triggered when focus is moved to an item (not selecting).\nThe default action is to replace the text field's value with the value of the focused item, though only if the event was triggered by a keyboard interaction.\nCanceling this event prevents the value from being updated, but does not prevent the menu item from being focused.",
             "itemtype": "event",
             "name": "focus",
@@ -350,7 +354,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 229,
+            "line": 239,
             "description": "Triggered when the suggestion menu is opened or updated.",
             "itemtype": "event",
             "name": "open",
@@ -359,7 +363,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 235,
+            "line": 246,
             "description": "Triggered after a search completes, before the menu is shown.\nUseful for local manipulation of suggestion data, where a custom source option callback is not required.\nThis event is always triggered when a search completes, even if the menu will not be shown because there are no results or the Autocomplete is disabled.",
             "itemtype": "event",
             "name": "response",
@@ -368,7 +372,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 243,
+            "line": 255,
             "description": "Triggered before a search is performed, after minLength and delay are met.\nIf canceled, then no request will be started and no items suggested.",
             "itemtype": "event",
             "name": "search",
@@ -377,7 +381,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 250,
+            "line": 263,
             "description": "Triggered when an item is selected from the menu.\nThe default action is to replace the text field's value with the value of the selected item.\nCanceling this event prevents the value from being updated, but does not prevent the menu from closing.",
             "itemtype": "event",
             "name": "select",
@@ -386,16 +390,19 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 332,
+            "line": 313,
             "description": "Closes the Autocomplete menu. Useful in combination with the search method, to close the open menu.",
             "itemtype": "method",
             "name": "close",
+            "uses": [
+                "$.ui.autocomplete"
+            ],
             "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 338,
+            "line": 322,
             "description": "Removes the autocomplete functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
             "name": "destroy",
@@ -404,7 +411,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 344,
+            "line": 329,
             "description": "Disables the autocomplete.",
             "itemtype": "method",
             "name": "disable",
@@ -413,7 +420,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 350,
+            "line": 336,
             "description": "Enables the autocomplete.",
             "itemtype": "method",
             "name": "enable",
@@ -422,7 +429,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 356,
+            "line": 343,
             "description": "`option( optionName )`\n\nGets an object containing key/value pairs representing the current autocomplete options hash.\n\n`option()`\n\nGets an object containing key/value pairs representing the current autocomplete options hash.\n\n`option( optionName, value )`\n\nSets the value of the autocomplete option associated with the specified optionName.\n\n`option( options )`\n\nSets one or more options for the autocomplete.",
             "itemtype": "method",
             "name": "option",
@@ -431,7 +438,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 376,
+            "line": 364,
             "description": "Triggers a search event and invokes the data source if the event is not canceled.\nCan be used by a selectbox-like button to open the suggestions when clicked.\nWhen invoked with no parameters, the current input's value is used.",
             "itemtype": "method",
             "name": "search",
@@ -448,7 +455,7 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 385,
+            "line": 374,
             "description": "Returns a jQuery object containing the menu element. Although the menu items are constantly created and destroyed, the menu element itself is created during initialization and is constantly reused.",
             "itemtype": "method",
             "name": "widget",
@@ -457,28 +464,43 @@
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 420,
-            "override": "",
+            "line": 443,
+            "override": "$.ui.autocomplete._initSource",
             "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 427,
-            "override": "",
+            "line": 450,
+            "override": "$.ui.autocomplete._renderMenu",
             "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/input/autocomplete.js",
-            "line": 437,
-            "override": "",
+            "line": 460,
+            "override": "$.ui.autocomplete._renderItem",
+            "class": "autocomplete",
+            "module": "Input"
+        },
+        {
+            "file": "src/widgets/input/autocomplete.js",
+            "line": 486,
+            "description": "callbacks for important jQuery UI Autocomplete events that helps to handle extension functionality",
             "class": "autocomplete",
             "module": "Input"
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 370,
+            "line": 166,
+            "description": "Labels are mapped to numbers 0,1,2...\nIf a chart consists of multiple series values(from all series) with the same label\nare mapped to the (one number 0,1,2..) space of width 1.\nbarWidth takes care of bars to not overlap",
+            "type": "{number}",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 305,
             "description": "Redraw chart without axis ranges",
             "itemtype": "method",
             "name": "resetZoom",
@@ -487,7 +509,7 @@
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 380,
+            "line": 315,
             "description": "Returns chart object",
             "itemtype": "method",
             "name": "getPlotObject",
@@ -496,15 +518,15 @@
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 397,
+            "line": 329,
             "description": "Use the destroy method to clean up any modifications your widget has made to the DOM",
             "itemtype": "method",
-            "name": "destroy",
+            "name": "_destroy",
             "class": "chart",
             "module": "Output"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 12,
             "description": "Disable the orderingList widget",
             "itemtype": "property",
@@ -515,7 +537,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 20,
             "description": "The text to use for the orderingList header",
             "itemtype": "property",
@@ -525,7 +547,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 27,
             "description": "The height of the orderingList",
             "itemtype": "property",
@@ -535,7 +557,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 34,
             "description": "The minimum height of the orderingList",
             "itemtype": "property",
@@ -545,7 +567,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 41,
             "description": "The maximum height of the orderingList",
             "itemtype": "property",
@@ -555,7 +577,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 48,
             "description": "A CSS class to be added to the orderingList.\nMultiple classes should be space separated",
             "itemtype": "property",
@@ -565,7 +587,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 56,
             "description": "A CSS class to be added to each column of the orderingList when table layout is used.\nMultiple classes should be space separated",
             "itemtype": "property",
@@ -575,7 +597,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 64,
             "description": "When true, show the buttons for ordering the selected elements",
             "itemtype": "property",
@@ -586,7 +608,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 72,
             "description": "Text to be applied to the ordering buttons of the ordering list.  The text should be arranged as an object in\nJSON notation.\n\neg. {first: ..., up: ..., down: ..., last: ...}",
             "itemtype": "property",
@@ -597,7 +619,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 83,
             "description": "When true, it is not possible to move a selected element outside of the orderingList",
             "itemtype": "property",
@@ -608,7 +630,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 91,
             "description": "When true dragging the mouse over the elements selects multiple elements.  This also reduces the drag handle\nused to re-order the elements.",
             "itemtype": "property",
@@ -619,7 +641,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 100,
             "description": "Allows elements to be dragged onto an empty list when true",
             "itemtype": "property",
@@ -630,7 +652,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
+            "file": "src/widgets/select/ordering-list.js",
             "line": 108,
             "description": "Allows elements to be ordered by drag and drop with the mouse when true",
             "itemtype": "property",
@@ -641,19 +663,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 116,
-            "description": "The String prefixed to all events triggered within the orderingList widget",
-            "itemtype": "property",
-            "name": "widgetEventPrefix",
-            "type": "JSON",
-            "default": "orderinglist_",
-            "class": "orderingList",
-            "module": "Select"
-        },
-        {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 127,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 119,
             "description": "Fired when the target list of the orderingList changes values.",
             "itemtype": "event",
             "name": "change",
@@ -661,8 +672,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 133,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 125,
             "description": "Fired after the dynamically created DOM elements of the orderingList have been created",
             "itemtype": "event",
             "name": "addDomElements",
@@ -670,8 +681,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 139,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 131,
             "description": "Fired after the orderingList has been created",
             "itemtype": "event",
             "name": "create",
@@ -679,8 +690,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 145,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 137,
             "description": "Fired after the orderingList has been destroyed",
             "itemtype": "event",
             "name": "destroy",
@@ -688,8 +699,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 151,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 143,
             "description": "Fired when the orderingList receives focus",
             "itemtype": "event",
             "name": "focus",
@@ -697,8 +708,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 157,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 149,
             "description": "Fired when the orderingList loses focus",
             "itemtype": "event",
             "name": "blur",
@@ -706,41 +717,287 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 275,
-            "description": "Removes the orderingList functionality completely. This will return the element back to its pre-init state.",
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 309,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 311,
+            "description": "Connect the orderingList with another orderingList, allowing items to be dragged between them.",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The orderingList with which to connect.",
+                    "type": "Object"
+                }
+            ],
             "itemtype": "method",
-            "name": "destroy",
+            "name": "connectWith",
             "chainable": 1,
             "class": "orderingList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 459,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 329,
+            "description": "Determine if the given item is selected",
+            "itemtype": "method",
+            "name": "isSelected",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "jQuery object of one of the orderingList elements",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "True if the item is selected, false otherwise",
+                "type": "Boolean"
+            },
             "class": "orderingList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 567,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 340,
+            "description": "Find and return the list of oerderingList elements that are selected",
+            "itemtype": "method",
+            "name": "getSelected",
+            "return": {
+                "description": "A jQuery list of selected items",
+                "type": "Object"
+            },
             "class": "orderingList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 792,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 350,
+            "description": "Select the given item",
+            "itemtype": "method",
+            "name": "selectItem",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "jQuery object of the orderingList element to select",
+                    "type": "Object"
+                }
+            ],
+            "chainable": 1,
             "class": "orderingList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/orderingList.js",
-            "line": 846,
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 362,
+            "description": "Un-select the given item",
+            "itemtype": "method",
+            "name": "unSelectItem",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "jQuery object of the orderingList element to un-select",
+                    "type": "Object"
+                }
+            ],
+            "chainable": 1,
             "class": "orderingList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 374,
+            "description": "Un-select all items in the orderingList",
+            "itemtype": "method",
+            "name": "unSelectAll",
+            "chainable": 1,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 389,
+            "description": "Move the given items to the top of the orderingList",
+            "itemtype": "method",
+            "name": "moveTop",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "the items to move to the top",
+                    "type": "Object"
+                },
+                {
+                    "name": "event",
+                    "description": "the event used that triggered this movement",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "null"
+                }
+            ],
+            "chainable": 1,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 408,
+            "description": "Move the given items up one step in the orderingList",
+            "itemtype": "method",
+            "name": "moveUp",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "the items to move up",
+                    "type": "Object"
+                },
+                {
+                    "name": "event",
+                    "description": "the event used that triggered this movement",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "null"
+                }
+            ],
+            "chainable": 1,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 432,
+            "description": "Move the given items down one step in the orderingList",
+            "itemtype": "method",
+            "name": "moveDown",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "the items to move down",
+                    "type": "Object"
+                },
+                {
+                    "name": "event",
+                    "description": "the event used that triggered this movement",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "null"
+                }
+            ],
+            "chainable": 1,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 458,
+            "description": "Move the given items to the end of the orderingList",
+            "itemtype": "method",
+            "name": "moveLast",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "the items to move to the end",
+                    "type": "Object"
+                },
+                {
+                    "name": "event",
+                    "description": "the event used that triggered this movement",
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "null"
+                }
+            ],
+            "chainable": 1,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 477,
+            "description": "Remove the given items from the orderingList",
+            "itemtype": "method",
+            "name": "remove",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "the items to remove",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "the items removed from the orderingList",
+                "type": "Object"
+            },
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 492,
+            "description": "Add the given items to the orderingList",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "items",
+                    "description": "the items to add",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "the items added to the orderingList",
+                "type": "Object"
+            },
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 507,
+            "description": "Retrieve the jQuery list of all items in the orderingList",
+            "itemtype": "method",
+            "name": "getOrderedElements",
+            "return": {
+                "description": "the jQuery list of selected elements",
+                "type": "Object"
+            },
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 517,
+            "description": "Retrieve the keys of all items in the orderingList",
+            "itemtype": "method",
+            "name": "getOrderedElements",
+            "return": {
+                "description": "An array of the keys of the selected elements",
+                "type": "Array"
+            },
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 664,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 889,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 943,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pick-list.js",
             "line": 12,
             "description": "Disable the pickList widget",
             "itemtype": "property",
@@ -751,7 +1008,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 20,
             "description": "The text to use for the pickList header",
             "itemtype": "property",
@@ -761,7 +1018,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 27,
             "description": "The text to use for the source header of the pickList",
             "itemtype": "property",
@@ -771,7 +1028,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 34,
             "description": "The text to use for the target header of the pickList",
             "itemtype": "property",
@@ -781,7 +1038,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 41,
             "description": "The height of the pickList",
             "itemtype": "property",
@@ -791,7 +1048,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 48,
             "description": "The minimum height of the pickList",
             "itemtype": "property",
@@ -801,7 +1058,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 55,
             "description": "The maximum height of the pickList",
             "itemtype": "property",
@@ -811,7 +1068,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 62,
             "description": "A CSS class to be added to the pickList.\nMultiple classes should be space separated",
             "itemtype": "property",
@@ -821,7 +1078,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 70,
             "description": "A CSS class to be added to each column of the pickList when table layout is used.\nMultiple classes should be space separated",
             "itemtype": "property",
@@ -831,7 +1088,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 78,
             "description": "When true, clicking on a pickList element will move it between the source and target lists",
             "itemtype": "property",
@@ -842,7 +1099,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 86,
             "description": "When true, double-clicking on a pickList element will move it between the source and target lists",
             "itemtype": "property",
@@ -853,7 +1110,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 94,
             "description": "When true, elements in the target list can be re-ordered",
             "itemtype": "property",
@@ -864,7 +1121,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 102,
             "description": "Text to be applied to the ordering buttons of the target list.  The text should be arranged as an object in\nJSON notation.\n\neg. {first: ..., up: ..., down: ..., last: ...}",
             "itemtype": "property",
@@ -875,7 +1132,7 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
+            "file": "src/widgets/select/pick-list.js",
             "line": 113,
             "description": "Text to be applied to the picking buttons of the picklist.  The text should be arranged as an object in\nJSON notation.\n\neg. {addAll: ..., add: ..., remove: ..., removeAll: ...}",
             "itemtype": "property",
@@ -886,19 +1143,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 124,
-            "description": "The String prefixed to all events triggered within the pickList widget",
-            "itemtype": "property",
-            "name": "widgetEventPrefix",
-            "type": "JSON",
-            "default": "picklist_",
-            "class": "pickList",
-            "module": "Select"
-        },
-        {
-            "file": "src/widgets/select/pickList.js",
-            "line": 135,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 127,
             "description": "Fired when the target list of the pickList changes values.",
             "itemtype": "event",
             "name": "change",
@@ -906,8 +1152,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 141,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 133,
             "description": "Fired after the dynamically created DOM elements of the pickList have been created",
             "itemtype": "event",
             "name": "addDomElements",
@@ -915,8 +1161,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 147,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 139,
             "description": "Fired after the pickList has been created",
             "itemtype": "event",
             "name": "create",
@@ -924,8 +1170,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 153,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 145,
             "description": "Fired after the pickList has been destroyed",
             "itemtype": "event",
             "name": "destroy",
@@ -933,8 +1179,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 159,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 151,
             "description": "Fired when the pickList receives focus",
             "itemtype": "event",
             "name": "focus",
@@ -942,8 +1188,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 165,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 157,
             "description": "Fired when the pickList loses focus",
             "itemtype": "event",
             "name": "blur",
@@ -951,24 +1197,14 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 219,
-            "description": "Removes the pickList functionality completely. This will return the element back to its pre-init state.",
-            "itemtype": "method",
-            "name": "destroy",
-            "chainable": 1,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 226,
             "class": "pickList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 241,
-            "class": "pickList",
-            "module": "Select"
-        },
-        {
-            "file": "src/widgets/select/pickList.js",
-            "line": 243,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 228,
             "description": "Move items from the target list of the pickList to the source list.",
             "params": [
                 {
@@ -979,7 +1215,9 @@
                 {
                     "name": "event",
                     "description": "The event that triggered the removal of the elements.  This event will be made accessible\nwhen the resulting change event is fired.",
-                    "type": "Object"
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "null"
                 }
             ],
             "itemtype": "method",
@@ -989,8 +1227,8 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 262,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 248,
             "description": "Move items from the source list of the pickList to the target list.",
             "params": [
                 {
@@ -1001,7 +1239,9 @@
                 {
                     "name": "event",
                     "description": "The event that triggered the removal of the elements.  This event will be made accessible\nwhen the resulting change event is fired.",
-                    "type": "Object"
+                    "type": "Object",
+                    "optional": true,
+                    "optdefault": "null"
                 }
             ],
             "itemtype": "method",
@@ -1011,20 +1251,20 @@
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 282,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 269,
             "class": "pickList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 587,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 574,
             "class": "pickList",
             "module": "Select"
         },
         {
-            "file": "src/widgets/select/pickList.js",
-            "line": 597,
+            "file": "src/widgets/select/pick-list.js",
+            "line": 584,
             "class": "pickList",
             "module": "Select"
         }
@@ -1032,59 +1272,95 @@
     "warnings": [
         {
             "message": "unknown tag: override",
-            "line": " src/widgets/input/autocomplete.js:420"
+            "line": " src/widgets/input/autocomplete.js:207"
         },
         {
             "message": "unknown tag: override",
-            "line": " src/widgets/input/autocomplete.js:427"
+            "line": " src/widgets/input/autocomplete.js:443"
         },
         {
             "message": "unknown tag: override",
-            "line": " src/widgets/input/autocomplete.js:437"
+            "line": " src/widgets/input/autocomplete.js:450"
+        },
+        {
+            "message": "unknown tag: override",
+            "line": " src/widgets/input/autocomplete.js:460"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:329"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:340"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:477"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:492"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:507"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:517"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/input/autocomplete.js:420"
+            "line": " src/widgets/input/autocomplete.js:443"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/input/autocomplete.js:427"
+            "line": " src/widgets/input/autocomplete.js:450"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/input/autocomplete.js:437"
+            "line": " src/widgets/input/autocomplete.js:460"
+        },
+        {
+            "message": "Missing item type\ncallbacks for important jQuery UI Autocomplete events that helps to handle extension functionality",
+            "line": " src/widgets/input/autocomplete.js:486"
+        },
+        {
+            "message": "Missing item type\nLabels are mapped to numbers 0,1,2...\nIf a chart consists of multiple series values(from all series) with the same label\nare mapped to the (one number 0,1,2..) space of width 1.\nbarWidth takes care of bars to not overlap",
+            "line": " src/widgets/output/chart.js:166"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:459"
+            "line": " src/widgets/select/ordering-list.js:309"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:567"
+            "line": " src/widgets/select/ordering-list.js:664"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:792"
+            "line": " src/widgets/select/ordering-list.js:889"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/orderingList.js:846"
+            "line": " src/widgets/select/ordering-list.js:943"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:241"
+            "line": " src/widgets/select/pick-list.js:226"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:282"
+            "line": " src/widgets/select/pick-list.js:269"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:587"
+            "line": " src/widgets/select/pick-list.js:574"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pickList.js:597"
+            "line": " src/widgets/select/pick-list.js:584"
         }
     ]
 }

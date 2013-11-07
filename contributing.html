@@ -70,11 +70,11 @@
               
             
               
-                <li ><a href="select/orderingList.html">OrderingList</a></li>
+                <li ><a href="select/ordering-list.html">OrderingList</a></li>
               
             
               
-                <li ><a href="select/pickList.html">PickList</a></li>
+                <li ><a href="select/pick-list.html">PickList</a></li>
               
             
               
@@ -152,11 +152,11 @@ jshint.</p>
 </li>
 <li>function white-spaces<ul>
 <li>named functions<ul>
-<li><code>function name(param1, param2) {</code></li>
+<li><code>function name(param1, param2) {}</code></li>
 </ul>
 </li>
 <li>unnamed functions<ul>
-<li><code>function (param1, param2) {</code></li>
+<li><code>function (param1, param2) {}</code></li>
 </ul>
 </li>
 </ul>
@@ -164,10 +164,28 @@ jshint.</p>
 </ul>
 </li>
 <li>Widget Factory<ul>
-<li>use the <code>rich</code> jquery plugin namespace</li>
-<li>Widget name prefix <strong><em>TBD</em></strong></li>
+<li>Use the <code>rich</code> jquery plugin namespace</li>
+<li>No widget name prefix when it is not required<ul>
+<li>i.e. when we extend upstream plugin&#39;s functionality, we make sure the API is compatible (e.g. <code>rich.autocomplete</code> extending <code>ui.autocomplete</code>)</li>
+</ul>
+</li>
 <li>Widget event prefix: stick with the default name of the widget (eg. no underscores or abbreviating)</li>
-<li>initialize all options, using <code>null</code> as default value is required</li>
+<li>Initialize all options, using <code>null</code> as default value is required</li>
+<li>Widget state should be collected for use in _trigger invocations using a method called <code>_uiHash</code></li>
+<li>order of methods inside widget definition<ol>
+<li>lifecycle methods (e.g. <code>_create()</code>, <code>_destroy()</code>)</li>
+<li>public API methods (e.g. <code>showPopup()</code>)</li>
+<li>private methods<ol>
+<li>initialization methods (e.g. <code>_setOption()</code>, <code>_initDom()</code>, <code>_bindListeners()</code>)</li>
+<li>cleanup methods (E.g. <code>_cleanDom()</code>)</li>
+<li>common utility methods (e.g. <code>_enable()</code>, <code>_disable()</code>, <code>_uiHash()</code>)</li>
+<li>event handlers</li>
+<li>other private methods (E.g. <code>_uiHash()</code>)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>use <code>this._super(key, value)</code> or <code>this._superApply(arguments)</code> for delegation to parent implementation</li>
 </ul>
 </li>
 </ul>
