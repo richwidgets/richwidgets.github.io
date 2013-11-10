@@ -96,26 +96,26 @@
 
 <div class="container">
   
-<h1>Testing RichWidgets <a href="https://travis-ci.org/richwidgets/richwidgets"><img src="https://travis-ci.org/richwidgets/richwidgets.png?branch=master" alt="Build Status"></a></h1>
+<h1 id="testing-richwidgets-build-status-https-travis-ci-org-richwidgets-richwidgets-png-branch-master-https-travis-ci-org-richwidgets-richwidgets-">Testing RichWidgets <a href="https://travis-ci.org/richwidgets/richwidgets"><img src="https://travis-ci.org/richwidgets/richwidgets.png?branch=master" alt="Build Status"></a></h1>
 <blockquote>
 <p>A JavaScript project containing standalone javascript widgets based on Bootstrap, jQuery UI and other third-party widgets, styled with LESS.</p>
 </blockquote>
-<h2>Testing</h2>
+<h2 id="testing">Testing</h2>
 <p>In the rapid evolving world of Web standards, libraries, and browsers testing is of paramount importance.  We need to make
 sure our widgets continue to function as we upgrade the various libraries that make up our project.</p>
 <p>RichWidgets uses <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/velesin/jasmine-jquery">jasmine-jquery</a>,
 using <a href="http://karma-runner.github.io/">karma</a> as our test runner.  Widget tests must go beyond simple setup/takedown of the widgets,
 and must also test all widget options and user interactions.  In this way we will be able to keep our widgets both current and stable.</p>
-<h3>Installing Karma</h3>
+<h3 id="installing-karma">Installing Karma</h3>
 <p><em>The Karma tool can be easily installed with NPM as:</em></p>
 <pre><code>npm install -g karma</code></pre>
-<h3>Running Test Suite</h3>
+<h3 id="running-test-suite">Running Test Suite</h3>
 <p><em>Run all tests on particular browsers:</em></p>
 <pre><code>karma start karma.conf.js --browsers=PhantomJS,Chrome,Firefox</code></pre>
-<h3>Developing Tests</h3>
-<h4>Run test suite continuously reacting on file changes:*</h4>
+<h3 id="developing-tests">Developing Tests</h3>
+<h4 id="run-test-suite-continuously-reacting-on-file-changes-">Run test suite continuously reacting on file changes:*</h4>
 <pre><code>karma start karma.conf.js --single-run=false --auto-watch=true --browsers=Chrome</code></pre>
-<h4>Running selected tests:</h4>
+<h4 id="running-selected-tests-">Running selected tests:</h4>
 <ul>
 <li>Open a javascript test source</li>
 <li>Rename the test definition from <code>it</code> to <code>iit</code><ul>
@@ -123,20 +123,20 @@ and must also test all widget options and user interactions.  In this way we wil
 </ul>
 </li>
 </ul>
-<h4>Debugging tests:</h4>
+<h4 id="debugging-tests-">Debugging tests:</h4>
 <ul>
 <li>Write <code>debugger;</code> anywhere in your test to set a breakpoint.</li>
 <li>Run the test suite with <code>--single-run=false --auto-watch=true</code> options.</li>
 <li>In a browser window open a console.</li>
 <li>Refresh the browser tab. It should stop the execution on the defined breakpoint.</li>
 </ul>
-<h4>Test Configuration</h4>
+<h4 id="test-configuration">Test Configuration</h4>
 <p>Tests are configured in two files:</p>
 <ul>
 <li><code>karma.conf.js</code> - configuration for Karma runner</li>
 <li><code>test/test-main.js</code> - configuration for Module Loading (AMD)</li>
 </ul>
-<h3>Running Tests on SauceLabs:</h3>
+<h3 id="running-tests-on-saucelabs-">Running Tests on SauceLabs:</h3>
 <p>In order to run tests on browsers you don&#39;t normally have access to,
 or for purposes of continous integration, we leverage Karma - SauceLabs runner.</p>
 <p>In order to set it up locally, you have to setup environmental variables:</p>
@@ -148,4 +148,17 @@ export SAUCE_ACCESS_KEY=your_generated_access_key</code></pre>
 
 </div>
 </body>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-7306415-8', 'richwidgets.io');
+        ga('send', 'pageview');
+    </script>
+
+
 </html>

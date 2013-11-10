@@ -154,14 +154,28 @@
        */
       targetHeader: null,
       /**
-       * The height of the pickList
+       * The height of the pickList.
+       * Specify the value as either:
+       *
+       * 1. A String with appropriate units, eg.:
+       *        height: &#x27;120px&#x27;
+       *
+       * 2. An integer without any units, in which case the units of &#x60;px&#x60; are assumed:
+       *        height: 120
        *
        * @property height
        * @type String
        */
       height: null,
       /**
-       * The minimum height of the pickList
+       * The minimum height of the pickList.
+       * Specify the value as either:
+       *
+       * 1. A String with appropriate units, eg.:
+       *        heightMin: &#x27;120px&#x27;
+       *
+       * 2. An integer without any units, in which case the units of &#x60;px&#x60; are assumed:
+       *        heightMin: 120
        *
        * @property heightMin
        * @type String
@@ -169,6 +183,13 @@
       heightMin: null,
       /**
        * The maximum height of the pickList
+       * Specify the value as either:
+       *
+       * 1. A String with appropriate units, eg.:
+       *        heightMax: &#x27;120px&#x27;
+       *
+       * 2. An integer without any units, in which case the units of &#x60;px&#x60; are assumed:
+       *        heightMax: 120
        *
        * @property heightMax
        * @type String
@@ -473,9 +494,15 @@
       buttonStack
         .append(
           button.clone()
-            .addClass(&#x27;btn-remove-all col-sm-12 col-xs-3&#x27;)
-            .html(&#x27;&lt;i class=&quot;icon icon-left-all&quot; /&gt;&#x27;)
-            .on(&#x27;click.pickList&#x27;, $.proxy(this._removeAllHandler, this))
+            .addClass(&#x27;btn-add-all col-sm-12 col-xs-3&#x27;)
+            .html(&#x27;&lt;i class=&quot;icon icon-right-all&quot; /&gt;&#x27;)
+            .on(&#x27;click.pickList&#x27;, $.proxy(this._addAllHandler, this))
+        )
+        .append(
+          button.clone()
+            .addClass(&#x27;btn-add col-sm-12 col-xs-3&#x27;)
+            .html(&#x27;&lt;i class=&quot;icon icon-right&quot; /&gt;&#x27;)
+            .on(&#x27;click.pickList&#x27;, $.proxy(this._addHandler, this))
         )
         .append(
           button.clone()
@@ -485,16 +512,9 @@
         )
         .append(
           button.clone()
-            .addClass(&#x27;btn-add col-sm-12 col-xs-3&#x27;)
-            .html(&#x27;&lt;i class=&quot;icon icon-right&quot; /&gt;&#x27;)
-            .on(&#x27;click.pickList&#x27;, $.proxy(this._addHandler, this))
-        )
-        .append(
-          button
-            .clone()
-            .addClass(&#x27;btn-add-all col-sm-12 col-xs-3&#x27;)
-            .html(&#x27;&lt;i class=&quot;icon icon-right-all&quot; /&gt;&#x27;)
-            .on(&#x27;click.pickList&#x27;, $.proxy(this._addAllHandler, this))
+            .addClass(&#x27;btn-remove-all col-sm-12 col-xs-3&#x27;)
+            .html(&#x27;&lt;i class=&quot;icon icon-left-all&quot; /&gt;&#x27;)
+            .on(&#x27;click.pickList&#x27;, $.proxy(this._removeAllHandler, this))
         );
       if (this.options.pickButtonsText) {
         this._applyButtonsText(buttonStack, this.options.pickButtonsText);
