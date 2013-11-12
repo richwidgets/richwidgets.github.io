@@ -375,9 +375,7 @@
       if (this.options.disabled) { return; }
       this.targetList.orderingList(&#x27;remove&#x27;, items);
       this.sourceList.orderingList(&#x27;add&#x27;, items);
-      var ui = this._uiHash();
-      ui.change = &#x27;remove&#x27;;
-      this._trigger(&#x27;change&#x27;, event, ui);
+      // do not trigger an event here, as the pickList will trigger an event off of the underlying orderingList event
       return this;
     },
 
@@ -395,11 +393,16 @@
       if (this.options.disabled) { return; }
       this.sourceList.orderingList(&#x27;remove&#x27;, items);
       this.targetList.orderingList(&#x27;add&#x27;, items);
-      var ui = this._uiHash();
-      ui.change = &#x27;add&#x27;;
-      this._trigger(&#x27;change&#x27;, event, ui);
+      // do not trigger an event here, as the pickList will trigger an event off of the underlying orderingList event
       return this;
     },
+
+    /**
+     * Removes the pick list functionality completely. This will return the element back to its pre-init state.
+     *
+     * @method destroy
+     */
+    // method implemented in $.widget
 
 
     /** Initialisation methods **/
@@ -619,19 +622,12 @@
       this.sourceList.on(&#x27;sortreceive&#x27;, function (event, ui) {
         var newUi = widget._uiHash();
         newUi.change = &#x27;remove&#x27;;
-        newUi.originalEvent = event;
-        widget._trigger(&#x27;change&#x27;, event, newUi);
-      });
-      this.targetList.on(&#x27;sortreceive&#x27;, function (event, ui) {
-        var newUi = widget._uiHash();
-        newUi.change = &#x27;add&#x27;;
-        newUi.originalEvent = event;
         widget._trigger(&#x27;change&#x27;, event, newUi);
       });
       this.targetList.on(&#x27;targetlist_change&#x27;, function (event, ui) {
         var newUi = widget._uiHash();
-        newUi.change = &#x27;sort&#x27;;
-        newUi.originalEvent = event;
+        newUi.change = ui.change;
+        newUi.movement = ui.movement;
         widget._trigger(&#x27;change&#x27;, event, newUi);
       });
       if (this.options.switchByClick) {

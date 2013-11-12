@@ -344,12 +344,22 @@
             ui.item.after(widget.currentItems.not(ui.item).detach());
           }
           widget.currentItems.not(&#x27;.placeholder&#x27;).show();
-          var ui2 = widget._uiHash();
-          ui2.movement = &#x27;drag&#x27;;
           if (widget.fillItem) {
             widget._updateFillRow();
           }
-          widget._trigger(&#x27;change&#x27;, event, ui2);
+        },
+        update: function(event, ui) {
+          if (ui.sender === null &amp;&amp; ui.item.parents(&#x27;.ordering-list&#x27;).get(0) === widget.element.parents(&#x27;.ordering-list&#x27;).get(0)) {
+            var ui2 = widget._uiHash();
+            ui2.change = &#x27;move&#x27;;
+            ui2.movement = &#x27;drag&#x27;;
+            widget._trigger(&#x27;change&#x27;, event, ui2);
+          }
+        },
+        receive: function (event, ui) {
+          var newUi = widget._uiHash();
+          newUi.change = &#x27;add&#x27;;
+          widget._trigger(&#x27;change&#x27;, event, newUi);
         }
       };
       if (this.element.is(&#x27;table&#x27;)) {
@@ -531,10 +541,15 @@
       event = event || null;
       if (this.options.disabled) { return; }
       var first = items.prevAll().not(&#x27;.ui-selected&#x27;).last();
+      var initialState = this.getOrderedKeys();
       $(items).insertBefore(first);
-      var ui = this._uiHash();
-      ui.movement = &#x27;moveTop&#x27;;
-      this._trigger(&#x27;change&#x27;, event, ui);
+      var finalState = this.getOrderedKeys();
+      if (initialState.toString() !== finalState.toString()) {
+        var ui = this._uiHash();
+        ui.change = &#x27;move&#x27;;
+        ui.movement = &#x27;moveTop&#x27;;
+        this._trigger(&#x27;change&#x27;, event, ui);
+      }
       return this;
     },
 
@@ -549,6 +564,7 @@
     moveUp: function (items, event) {
       event = event || null;
       if (this.options.disabled) { return; }
+      var initialState = this.getOrderedKeys();
       $(items).each(function () {
         var $item = $(this);
         var prev = $item.prevAll().not(&#x27;.ui-selected&#x27;).first();
@@ -556,9 +572,13 @@
           $item.insertBefore(prev);
         }
       });
-      var ui = this._uiHash();
-      ui.movement = &#x27;moveUp&#x27;;
-      this._trigger(&#x27;change&#x27;, event, ui);
+      var finalState = this.getOrderedKeys();
+      if (initialState.toString() !== finalState.toString()) {
+        var ui = this._uiHash();
+        ui.change = &#x27;move&#x27;;
+        ui.movement = &#x27;moveUp&#x27;;
+        this._trigger(&#x27;change&#x27;, event, ui);
+      }
       return this;
     },
 
@@ -573,6 +593,7 @@
     moveDown: function (items, event) {
       event = event || null;
       if (this.options.disabled) { return; }
+      var initialState = this.getOrderedKeys();
       $(items).sort(function () {
         return 1;
       }).each(function () {
@@ -582,9 +603,13 @@
             $item.insertAfter(next);
           }
         });
-      var ui = this._uiHash();
-      ui.movement = &#x27;moveDown&#x27;;
-      this._trigger(&#x27;change&#x27;, event, ui);
+      var finalState = this.getOrderedKeys();
+      if (initialState.toString() !== finalState.toString()) {
+        var ui = this._uiHash();
+        ui.change = &#x27;move&#x27;;
+        ui.movement = &#x27;moveDown&#x27;;
+        this._trigger(&#x27;change&#x27;, event, ui);
+      }
       return this;
     },
 
@@ -599,11 +624,16 @@
     moveLast: function (items, event) {
       event = event || null;
       if (this.options.disabled) { return; }
+      var initialState = this.getOrderedKeys();
       var last = items.nextAll().not(&#x27;.ui-selected&#x27;).last();
       $(items).insertAfter(last);
-      var ui = this._uiHash();
-      ui.movement = &#x27;moveLast&#x27;;
-      this._trigger(&#x27;change&#x27;, event, ui);
+      var finalState = this.getOrderedKeys();
+      if (initialState.toString() !== finalState.toString()) {
+        var ui = this._uiHash();
+        ui.change = &#x27;move&#x27;;
+        ui.movement = &#x27;moveLast&#x27;;
+        this._trigger(&#x27;change&#x27;, event, ui);
+      }
       return this;
     },
 
@@ -615,9 +645,12 @@
      * @returns {Object} the items removed from the orderingList
      */
     remove: function (items) {
+      if (!items || items.length === 0) {
+        return null;
+      }
       var removed = this.$pluginRoot.find(items).detach();
       var ui = this._uiHash();
-      ui.movement = &#x27;remove&#x27;;
+      ui.change = &#x27;remove&#x27;;
       this._trigger(&#x27;change&#x27;, {}, ui);
       return removed;
     },
@@ -630,9 +663,12 @@
      * @returns {Object} the items added to the orderingList
      */
     add: function (items) {
+      if (!items || items.length === 0) {
+        return null;
+      }
       this.$pluginRoot.prepend(items);
       var ui = this._uiHash();
-      ui.movement = &#x27;add&#x27;;
+      ui.change = &#x27;add&#x27;;
       this._trigger(&#x27;change&#x27;, {}, ui);
       return items;
     },
@@ -656,6 +692,13 @@
     getOrderedKeys: function () {
       return (this._createKeyArray( this.getOrderedElements()));
     },
+
+    /**
+     * Removes the ordering list functionality completely. This will return the element back to its pre-init state.
+     *
+     * @method destroy
+     */
+    // method implemented in $.widget
 
     _setOption: function (key, value) {
       var widget = this;
@@ -1012,6 +1055,19 @@
       this._addDragListeners();
     },
 
+    /**
+     * A dump of the current state of the widget
+     *
+     * @method _uiHash
+     * @private
+     * @returns {Object} A &#x60;ui&#x60; object holding the current state.  The &#x60;ui&#x60; object has the properties:
+     * &#x60;&#x60;&#x60;&#x60;javascript
+     * {
+     *   change: &#x27;move&#x27;| &#x27;add&#x27; | &#x27;remove&#x27;,
+     *   movement: &#x27;drag&#x27; | &#x27;moveUp&#x27; | &#x27;moveTop&#x27; | &#x27;moveDown&#x27; | &#x27;moveLast&#x27;
+     * }
+     * &#x60;&#x60;&#x60;&#x60;
+     */
     _uiHash: function () {
       var ui = {};
       ui.orderedElements = this.getOrderedElements();

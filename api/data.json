@@ -492,7 +492,202 @@
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 166,
+            "line": 14,
+            "description": "Specifies the type of chart.\nAccording to this property and xtypex ytype, proper default options corresponding to chart type\nare applied and data are transformed to the format expected by flot.\nFollowing values are supported: `line`,`bar`,`pie`\nOptions is not required. If it is not used the options and data format remains the same as flot uses by default.",
+            "itemtype": "property",
+            "name": "charttype",
+            "default": "null",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 25,
+            "description": "Specify the data type of values plotted on x-axis\nFollowing options are supported: number,string,date",
+            "itemtype": "property",
+            "name": "xtype",
+            "default": "null",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 33,
+            "description": "Specify the data type of values plotted on x-axis\nFollowing options are supported: number,string,date",
+            "itemtype": "property",
+            "name": "xtype",
+            "default": "null",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 41,
+            "description": "Allows to zoom the chart. Supported only when line chart is used. Requires charttype to be set.",
+            "itemtype": "property",
+            "name": "zoom",
+            "default": "false",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 50,
+            "description": "Options customizing the chart grid.",
+            "type": "Object",
+            "default": "{clickable:true, hoverable:true}",
+            "itemtype": "property",
+            "name": "grid",
+            "class": "chart",
+            "module": "Output",
+            "subprops": [
+                {
+                    "name": "clickable",
+                    "description": "\n  Grid accepts click events.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "hoverable",
+                    "description": "\n  Grid fires mouseover event. Necessary for tooltip to work.",
+                    "type": "Boolean"
+                }
+            ]
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 66,
+            "description": "Turns on tooltip (text shown when mouse points to a part of a chart)",
+            "itemtype": "property",
+            "name": "tooltip",
+            "type": "boolean",
+            "default": "true",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 74,
+            "description": "Customizes the tooltip.",
+            "type": "Object",
+            "default": "{ content: '%s [%x,%y]'}",
+            "itemtype": "property",
+            "name": "tooltipOpts",
+            "class": "chart",
+            "module": "Output",
+            "subprops": [
+                {
+                    "name": "content",
+                    "description": "\n   Specify the tooltip format. Use %s for series label, %x for X values, %y for Y value",
+                    "type": "String"
+                },
+                {
+                    "name": "defaultTheme",
+                    "description": ""
+                }
+            ]
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 92,
+            "description": "Legend properties",
+            "type": "Object",
+            "default": "{postion:'ne', sorted: 'ascending'}",
+            "itemtype": "property",
+            "name": "legend",
+            "class": "chart",
+            "module": "Output",
+            "subprops": [
+                {
+                    "name": "position",
+                    "description": "\n   Defines the placement of the legend in the grid. One of ne,nw,se,sw",
+                    "type": "String"
+                },
+                {
+                    "name": "sorted",
+                    "description": "\n   Defines the order of labels in the legend. One of ascending,descending,false.",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 107,
+            "description": "Customizes the horizontal axis",
+            "type": "Object",
+            "default": "{min: null, max: null,autoscaleMargin: null, axisLabel: ''}",
+            "itemtype": "property",
+            "name": "xaxis",
+            "class": "chart",
+            "module": "Output",
+            "subprops": [
+                {
+                    "name": "min",
+                    "description": "\n  Minimal value shown on axis",
+                    "type": "Number"
+                },
+                {
+                    "name": "max",
+                    "description": "\n  Maximal values show on axis",
+                    "type": "Number"
+                },
+                {
+                    "name": "autoscaleMargin",
+                    "description": "\n  It's the fraction of margin that the scaling algorithm will add\n  to avoid that the outermost points ends up on the grid border",
+                    "type": "Number"
+                },
+                {
+                    "name": "axisLabel",
+                    "description": "\n  Axis description",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 129,
+            "description": "Customizes the vertical axis",
+            "type": "Object",
+            "default": "{min: null, max: null,autoscaleMargin: 0.2,axisLabel: ''}",
+            "itemtype": "property",
+            "name": "xaxis",
+            "class": "chart",
+            "module": "Output",
+            "subprops": [
+                {
+                    "name": "min",
+                    "description": "\n  Minimal value shown on axis",
+                    "type": "Number"
+                },
+                {
+                    "name": "max",
+                    "description": "\n  Maximal values show on axis",
+                    "type": "Number"
+                },
+                {
+                    "name": "autoscaleMargin",
+                    "description": "\n  It's the fraction of margin that the scaling algorithm will add to\n  avoid that the outermost points ends up on the grid border.",
+                    "type": "Number"
+                },
+                {
+                    "name": "axisLabel",
+                    "description": "\n  Axis description",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 154,
+            "description": "Data to be plotted. The format is the same used by flot. The format may differ if the charttype\noption is set to pie or bar.",
+            "itemtype": "property",
+            "name": "data",
+            "default": "[]",
+            "class": "chart",
+            "module": "Output"
+        },
+        {
+            "file": "src/widgets/output/chart.js",
+            "line": 297,
             "description": "Labels are mapped to numbers 0,1,2...\nIf a chart consists of multiple series values(from all series) with the same label\nare mapped to the (one number 0,1,2..) space of width 1.\nbarWidth takes care of bars to not overlap",
             "type": "{number}",
             "class": "chart",
@@ -500,7 +695,7 @@
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 305,
+            "line": 436,
             "description": "Redraw chart without axis ranges",
             "itemtype": "method",
             "name": "resetZoom",
@@ -509,7 +704,7 @@
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 315,
+            "line": 446,
             "description": "Returns chart object",
             "itemtype": "method",
             "name": "getPlotObject",
@@ -518,7 +713,7 @@
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 329,
+            "line": 460,
             "description": "Use the destroy method to clean up any modifications your widget has made to the DOM",
             "itemtype": "method",
             "name": "_destroy",
@@ -718,13 +913,13 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 327,
+            "line": 337,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 329,
+            "line": 339,
             "description": "Connect the orderingList with another orderingList, allowing items to be dragged between them.",
             "params": [
                 {
@@ -741,7 +936,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 347,
+            "line": 357,
             "description": "Determine if the given item is selected",
             "itemtype": "method",
             "name": "isSelected",
@@ -761,7 +956,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 358,
+            "line": 368,
             "description": "Find and return the list of oerderingList elements that are selected",
             "itemtype": "method",
             "name": "getSelected",
@@ -774,7 +969,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 368,
+            "line": 378,
             "description": "Select the given item",
             "itemtype": "method",
             "name": "selectItem",
@@ -791,7 +986,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 380,
+            "line": 390,
             "description": "Un-select the given item",
             "itemtype": "method",
             "name": "unSelectItem",
@@ -808,7 +1003,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 392,
+            "line": 402,
             "description": "Un-select all items in the orderingList",
             "itemtype": "method",
             "name": "unSelectAll",
@@ -818,7 +1013,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 407,
+            "line": 417,
             "description": "Move the given items to the top of the orderingList",
             "itemtype": "method",
             "name": "moveTop",
@@ -842,7 +1037,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 426,
+            "line": 441,
             "description": "Move the given items up one step in the orderingList",
             "itemtype": "method",
             "name": "moveUp",
@@ -866,7 +1061,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 450,
+            "line": 470,
             "description": "Move the given items down one step in the orderingList",
             "itemtype": "method",
             "name": "moveDown",
@@ -890,7 +1085,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 476,
+            "line": 501,
             "description": "Move the given items to the end of the orderingList",
             "itemtype": "method",
             "name": "moveLast",
@@ -914,7 +1109,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 495,
+            "line": 525,
             "description": "Remove the given items from the orderingList",
             "itemtype": "method",
             "name": "remove",
@@ -934,7 +1129,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 510,
+            "line": 543,
             "description": "Add the given items to the orderingList",
             "itemtype": "method",
             "name": "add",
@@ -954,7 +1149,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 525,
+            "line": 561,
             "description": "Retrieve the jQuery list of all items in the orderingList",
             "itemtype": "method",
             "name": "getOrderedElements",
@@ -967,7 +1162,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 535,
+            "line": 571,
             "description": "Retrieve the keys of all items in the orderingList",
             "itemtype": "method",
             "name": "getOrderedKeys",
@@ -980,19 +1175,43 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 682,
+            "line": 581,
+            "description": "Removes the ordering list functionality completely. This will return the element back to its pre-init state.",
+            "itemtype": "method",
+            "name": "destroy",
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 907,
+            "line": 725,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 961,
+            "line": 943,
+            "description": "A dump of the current state of the widget",
+            "itemtype": "method",
+            "name": "_uiHash",
+            "access": "private",
+            "tagname": "",
+            "return": {
+                "description": "A `ui` object holding the current state.  The `ui` object has the properties:\n````javascript\n{\n  change: 'move'| 'add' | 'remove',\n  movement: 'drag' | 'moveUp' | 'moveTop' | 'moveDown' | 'moveLast'\n}\n````",
+                "type": "Object"
+            },
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 963,
+            "class": "orderingList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/ordering-list.js",
+            "line": 1017,
             "class": "orderingList",
             "module": "Select"
         },
@@ -1228,7 +1447,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 269,
+            "line": 267,
             "description": "Move items from the source list of the pickList to the target list.",
             "params": [
                 {
@@ -1252,19 +1471,28 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 290,
+            "line": 285,
+            "description": "Removes the pick list functionality completely. This will return the element back to its pre-init state.",
+            "itemtype": "method",
+            "name": "destroy",
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 594,
+            "line": 293,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 604,
+            "line": 590,
+            "class": "pickList",
+            "module": "Select"
+        },
+        {
+            "file": "src/widgets/select/pick-list.js",
+            "line": 600,
             "class": "pickList",
             "module": "Select"
         }
@@ -1288,19 +1516,11 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:347"
+            "line": " src/widgets/select/ordering-list.js:357"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:358"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:495"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:510"
+            "line": " src/widgets/select/ordering-list.js:368"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -1308,7 +1528,19 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:535"
+            "line": " src/widgets/select/ordering-list.js:543"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:561"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:571"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src/widgets/select/ordering-list.js:943"
         },
         {
             "message": "Missing item type",
@@ -1328,23 +1560,23 @@
         },
         {
             "message": "Missing item type\nLabels are mapped to numbers 0,1,2...\nIf a chart consists of multiple series values(from all series) with the same label\nare mapped to the (one number 0,1,2..) space of width 1.\nbarWidth takes care of bars to not overlap",
-            "line": " src/widgets/output/chart.js:166"
+            "line": " src/widgets/output/chart.js:297"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:327"
+            "line": " src/widgets/select/ordering-list.js:337"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:682"
+            "line": " src/widgets/select/ordering-list.js:725"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:907"
+            "line": " src/widgets/select/ordering-list.js:963"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:961"
+            "line": " src/widgets/select/ordering-list.js:1017"
         },
         {
             "message": "Missing item type",
@@ -1352,15 +1584,15 @@
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:290"
+            "line": " src/widgets/select/pick-list.js:293"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:594"
+            "line": " src/widgets/select/pick-list.js:590"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:604"
+            "line": " src/widgets/select/pick-list.js:600"
         }
     ]
 }
