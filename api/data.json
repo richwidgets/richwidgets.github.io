@@ -784,7 +784,7 @@
         {
             "file": "src/widgets/select/ordering-list.js",
             "line": 74,
-            "description": "When _table_ layout is used,\n_columnClasses_ specifies a comma-delimited list of CSS style classes to apply to each column.\nA space separated list of classes may be specified for an individual column.\n\nIf the number of elements in this list is less than the number of column children,\nthe class will be applied to every n-fold column where n is the order the class in this list.\n\n If there are more class names than columns, the overflow ones are ignored.",
+            "description": "When _table_ layout is used,\n_columnClasses_ specifies a comma-delimited list of CSS style classes to apply to each column.\nA space separated list of classes may be specified for an individual column.\n\nIf the number of classes in this list is less than the number of column children, then no class will be\napplied to the columns greater than the number of classes.  If however the final class in the list is the `*`\ncharacter, the classes will instead be applied in a repeating manner every n-fold column, where n is the order\nthe class in this list.\n\n If there are more class names than columns, the overflow ones are ignored.",
             "itemtype": "property",
             "name": "columnClasses",
             "type": "String",
@@ -793,7 +793,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 88,
+            "line": 90,
             "description": "When true, show the buttons for ordering the selected elements",
             "itemtype": "property",
             "name": "showButtons",
@@ -804,7 +804,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 96,
+            "line": 98,
             "description": "Text to be applied to the ordering buttons of the ordering list.  The text should be arranged as an object in\nJSON notation.\n\neg. {first: ..., up: ..., down: ..., last: ...}",
             "itemtype": "property",
             "name": "buttonsText",
@@ -815,7 +815,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 107,
+            "line": 109,
             "description": "When true, it is not possible to move a selected element outside of the orderingList",
             "itemtype": "property",
             "name": "contained",
@@ -826,7 +826,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 115,
+            "line": 117,
             "description": "When true dragging the mouse over the elements selects multiple elements.  This also reduces the drag handle\nused to re-order the elements.",
             "itemtype": "property",
             "name": "dragSelect",
@@ -837,7 +837,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 124,
+            "line": 126,
             "description": "Allows elements to be dragged onto an empty list when true",
             "itemtype": "property",
             "name": "dropOnEmpty",
@@ -848,7 +848,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 132,
+            "line": 134,
             "description": "Allows elements to be ordered by drag and drop with the mouse when true",
             "itemtype": "property",
             "name": "mouseOrderable",
@@ -859,7 +859,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 143,
+            "line": 145,
             "description": "Fired when the target list of the orderingList changes values.",
             "itemtype": "event",
             "name": "change",
@@ -868,7 +868,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 149,
+            "line": 151,
             "description": "Fired after the dynamically created DOM elements of the orderingList have been created",
             "itemtype": "event",
             "name": "addDomElements",
@@ -877,7 +877,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 155,
+            "line": 157,
             "description": "Fired after the orderingList has been created",
             "itemtype": "event",
             "name": "create",
@@ -886,7 +886,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 161,
+            "line": 163,
             "description": "Fired after the orderingList has been destroyed",
             "itemtype": "event",
             "name": "destroy",
@@ -895,7 +895,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 167,
+            "line": 169,
             "description": "Fired when the orderingList receives focus",
             "itemtype": "event",
             "name": "focus",
@@ -904,7 +904,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 173,
+            "line": 175,
             "description": "Fired when the orderingList loses focus",
             "itemtype": "event",
             "name": "blur",
@@ -913,13 +913,13 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 345,
+            "line": 347,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 347,
+            "line": 349,
             "description": "Connect the orderingList with another orderingList, allowing items to be dragged between them.",
             "params": [
                 {
@@ -936,7 +936,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 365,
+            "line": 367,
             "description": "Determine if the given item is selected",
             "itemtype": "method",
             "name": "isSelected",
@@ -956,7 +956,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 376,
+            "line": 378,
             "description": "Find and return the list of oerderingList elements that are selected",
             "itemtype": "method",
             "name": "getSelected",
@@ -969,7 +969,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 386,
+            "line": 388,
             "description": "Select the given item",
             "itemtype": "method",
             "name": "selectItem",
@@ -986,7 +986,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 398,
+            "line": 400,
             "description": "Un-select the given item",
             "itemtype": "method",
             "name": "unSelectItem",
@@ -1003,7 +1003,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 410,
+            "line": 412,
             "description": "Un-select all items in the orderingList",
             "itemtype": "method",
             "name": "unSelectAll",
@@ -1013,7 +1013,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 425,
+            "line": 427,
             "description": "Move the given items to the top of the orderingList",
             "itemtype": "method",
             "name": "moveTop",
@@ -1037,7 +1037,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 450,
+            "line": 452,
             "description": "Move the given items up one step in the orderingList",
             "itemtype": "method",
             "name": "moveUp",
@@ -1061,7 +1061,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 480,
+            "line": 482,
             "description": "Move the given items down one step in the orderingList",
             "itemtype": "method",
             "name": "moveDown",
@@ -1085,7 +1085,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 512,
+            "line": 514,
             "description": "Move the given items to the end of the orderingList",
             "itemtype": "method",
             "name": "moveLast",
@@ -1109,7 +1109,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 537,
+            "line": 539,
             "description": "Remove the given items from the orderingList",
             "itemtype": "method",
             "name": "remove",
@@ -1129,7 +1129,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 555,
+            "line": 557,
             "description": "Add the given items to the orderingList",
             "itemtype": "method",
             "name": "add",
@@ -1149,7 +1149,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 573,
+            "line": 575,
             "description": "Retrieve the jQuery list of all items in the orderingList",
             "itemtype": "method",
             "name": "getOrderedElements",
@@ -1162,7 +1162,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 583,
+            "line": 585,
             "description": "Retrieve the keys of all items in the orderingList",
             "itemtype": "method",
             "name": "getOrderedKeys",
@@ -1175,7 +1175,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 593,
+            "line": 595,
             "description": "Removes the ordering list functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
             "name": "destroy",
@@ -1184,13 +1184,13 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 737,
+            "line": 739,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 973,
+            "line": 975,
             "description": "A dump of the current state of the widget",
             "itemtype": "method",
             "name": "_uiHash",
@@ -1205,13 +1205,13 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 993,
+            "line": 995,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 1050,
+            "line": 1052,
             "class": "orderingList",
             "module": "Select"
         },
@@ -1299,13 +1299,13 @@
         {
             "file": "src/widgets/select/pick-list.js",
             "line": 91,
-            "description": "/**\n* When _table_ layout is used,\n* _columnClasses_ specifies a comma-delimited list of CSS style classes to apply to each column.\n* A space separated list of classes may be specified for an individual column.\n*\n* If the number of elements in this list is less than the number of column children,\n* the class will be applied to every n-fold column where n is the order the class in this list.\n*\n*  If there are more class names than columns, the overflow ones are ignored.\n*\n* @property columnClasses\n* @type String",
+            "description": "/**\n* When _table_ layout is used,\n* _columnClasses_ specifies a comma-delimited list of CSS style classes to apply to each column.\n* A space separated list of classes may be specified for an individual column.\n*\n* If the number of classes in this list is less than the number of column children, then no class will be\n* applied to the columns greater than the number of classes.  If however the final class in the list is the `*`\n* character, the classes will instead be applied in a repeating manner every n-fold column, where n is the order\n* the class in this list.\n*\n*  If there are more class names than columns, the overflow ones are ignored.\n*\n* @property columnClasses\n* @type String",
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 106,
+            "line": 108,
             "description": "When true, clicking on a pickList element will move it between the source and target lists",
             "itemtype": "property",
             "name": "switchByClick",
@@ -1316,7 +1316,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 114,
+            "line": 116,
             "description": "When true, double-clicking on a pickList element will move it between the source and target lists",
             "itemtype": "property",
             "name": "switchByDblClick",
@@ -1327,7 +1327,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 122,
+            "line": 124,
             "description": "When true, elements in the target list can be re-ordered",
             "itemtype": "property",
             "name": "orderable",
@@ -1338,7 +1338,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 130,
+            "line": 132,
             "description": "Text to be applied to the ordering buttons of the target list.  The text should be arranged as an object in\nJSON notation.\n\neg. {first: ..., up: ..., down: ..., last: ...}",
             "itemtype": "property",
             "name": "orderButtonsText",
@@ -1349,7 +1349,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 141,
+            "line": 143,
             "description": "Text to be applied to the picking buttons of the picklist.  The text should be arranged as an object in\nJSON notation.\n\neg. {addAll: ..., add: ..., remove: ..., removeAll: ...}",
             "itemtype": "property",
             "name": "pickButtonsText",
@@ -1360,7 +1360,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 155,
+            "line": 157,
             "description": "Fired when the target list of the pickList changes values.",
             "itemtype": "event",
             "name": "change",
@@ -1369,7 +1369,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 161,
+            "line": 163,
             "description": "Fired after the dynamically created DOM elements of the pickList have been created",
             "itemtype": "event",
             "name": "addDomElements",
@@ -1378,7 +1378,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 167,
+            "line": 169,
             "description": "Fired after the pickList has been created",
             "itemtype": "event",
             "name": "create",
@@ -1387,7 +1387,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 173,
+            "line": 175,
             "description": "Fired after the pickList has been destroyed",
             "itemtype": "event",
             "name": "destroy",
@@ -1396,7 +1396,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 179,
+            "line": 181,
             "description": "Fired when the pickList receives focus",
             "itemtype": "event",
             "name": "focus",
@@ -1405,7 +1405,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 185,
+            "line": 187,
             "description": "Fired when the pickList loses focus",
             "itemtype": "event",
             "name": "blur",
@@ -1414,13 +1414,13 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 256,
+            "line": 258,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 258,
+            "line": 260,
             "description": "Move items from the target list of the pickList to the source list.",
             "params": [
                 {
@@ -1444,7 +1444,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 276,
+            "line": 278,
             "description": "Move items from the source list of the pickList to the target list.",
             "params": [
                 {
@@ -1468,7 +1468,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 294,
+            "line": 296,
             "description": "Removes the pick list functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
             "name": "destroy",
@@ -1477,19 +1477,19 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 302,
+            "line": 304,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 599,
+            "line": 601,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 609,
+            "line": 611,
             "class": "pickList",
             "module": "Select"
         }
@@ -1513,31 +1513,31 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:365"
+            "line": " src/widgets/select/ordering-list.js:367"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:376"
+            "line": " src/widgets/select/ordering-list.js:378"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:537"
+            "line": " src/widgets/select/ordering-list.js:539"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:555"
+            "line": " src/widgets/select/ordering-list.js:557"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:573"
+            "line": " src/widgets/select/ordering-list.js:575"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:583"
+            "line": " src/widgets/select/ordering-list.js:585"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:973"
+            "line": " src/widgets/select/ordering-list.js:975"
         },
         {
             "message": "Missing item type",
@@ -1561,39 +1561,39 @@
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:345"
+            "line": " src/widgets/select/ordering-list.js:347"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:737"
+            "line": " src/widgets/select/ordering-list.js:739"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:993"
+            "line": " src/widgets/select/ordering-list.js:995"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:1050"
+            "line": " src/widgets/select/ordering-list.js:1052"
         },
         {
-            "message": "Missing item type\n/**\n* When _table_ layout is used,\n* _columnClasses_ specifies a comma-delimited list of CSS style classes to apply to each column.\n* A space separated list of classes may be specified for an individual column.\n*\n* If the number of elements in this list is less than the number of column children,\n* the class will be applied to every n-fold column where n is the order the class in this list.\n*\n*  If there are more class names than columns, the overflow ones are ignored.\n*\n* @property columnClasses\n* @type String",
+            "message": "Missing item type\n/**\n* When _table_ layout is used,\n* _columnClasses_ specifies a comma-delimited list of CSS style classes to apply to each column.\n* A space separated list of classes may be specified for an individual column.\n*\n* If the number of classes in this list is less than the number of column children, then no class will be\n* applied to the columns greater than the number of classes.  If however the final class in the list is the `*`\n* character, the classes will instead be applied in a repeating manner every n-fold column, where n is the order\n* the class in this list.\n*\n*  If there are more class names than columns, the overflow ones are ignored.\n*\n* @property columnClasses\n* @type String",
             "line": " src/widgets/select/pick-list.js:91"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:256"
+            "line": " src/widgets/select/pick-list.js:258"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:302"
+            "line": " src/widgets/select/pick-list.js:304"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:599"
+            "line": " src/widgets/select/pick-list.js:601"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:609"
+            "line": " src/widgets/select/pick-list.js:611"
         }
     ]
 }
