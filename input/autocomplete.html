@@ -111,7 +111,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="json-source" type="text" class="form-control" />
-            <script src="../assets-demo/input/autocomplete/json-source.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>The simplest possible approach to provide autocompletion data is passing an array of suggestions.</p>
@@ -130,18 +130,6 @@ $(<span class="string">'#json-source'</span>).autocomplete({ source: source });<
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;json-source&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> source = [ <span class="string">'ActionScript'</span>, <span class="string">'AppleScript'</span>, <span class="string">'Asp'</span>, <span class="string">'BASIC'</span>, <span class="string">'C'</span>, <span class="string">'C++'</span>, <span class="string">'Clojure'</span>, <span class="string">'Ceylon'</span>, <span class="string">'COBOL'</span>, <span class="string">'ColdFusion'</span>, <span class="string">'Erlang'</span>, <span class="string">'Fortran'</span>, <span class="string">'Groovy'</span>, <span class="string">'Haskell'</span>, <span class="string">'Java'</span>, <span class="string">'JavaScript'</span>, <span class="string">'Lisp'</span>, <span class="string">'Perl'</span>, <span class="string">'PHP'</span>, <span class="string">'Python'</span>, <span class="string">'Ruby'</span>, <span class="string">'Scala'</span>, <span class="string">'Scheme'</span> ];
-
-$(<span class="string">'#json-source'</span>).autocomplete({ source: source });</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -155,7 +143,7 @@ $(<span class="string">'#json-source'</span>).autocomplete({ source: source });<
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="function-source" type="text" class="form-control" />
-            <script src="../assets-demo/input/autocomplete/function-source.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>Much more powerful is definition of a suggestions by providing a function.</p>
@@ -189,22 +177,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;function-source&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> asyncSuggest = <span class="function"><span class="keyword">function</span> <span class="params">(request, response)</span> {</span>
-  setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-    response($.ui.autocomplete.filter(source, request.term));
-  }, <span class="number">1000</span>);
-};
-
-$(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSuggest });</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -220,10 +192,10 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
             <input id="list-source" type="text" class="form-control" />
 
 <ul id="list-suggestions" style="display: none">
-  <li><i class="icon-heart"></i> Java</i></li>
-  <li><i class="icon-flag"></i> Haskell</li>
+  <li><i class="fa fa-heart"></i> Java</i></li>
+  <li><i class="fa fa-flag"></i> Haskell</li>
 </ul>
-            <script src="../assets-demo/input/autocomplete/list.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>For some use cases, it might be beneficial to use DOM as a source for suggestions.</p>
@@ -238,8 +210,8 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
         <pre><code class="language-html">&lt;input id=&quot;list-source&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;
 
 &lt;ul id=&quot;list-suggestions&quot; style=&quot;display: none&quot;&gt;
-  &lt;li&gt;&lt;i class=&quot;icon-heart&quot;&gt;&lt;/i&gt; Java&lt;/i&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;i class=&quot;icon-flag&quot;&gt;&lt;/i&gt; Haskell&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&quot;fa fa-heart&quot;&gt;&lt;/i&gt; Java&lt;/i&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&quot;fa fa-flag&quot;&gt;&lt;/i&gt; Haskell&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
         <pre><code class="language-js">$(<span class="string">'#list-source'</span>).autocomplete({ source: <span class="string">'#list-suggestions'</span> });</code></pre>
@@ -247,21 +219,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;list-source&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;
-
-&lt;ul id=&quot;list-suggestions&quot; style=&quot;display: none&quot;&gt;
-  &lt;li&gt;&lt;i class=&quot;icon-heart&quot;&gt;&lt;/i&gt; Java&lt;/i&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;i class=&quot;icon-flag&quot;&gt;&lt;/i&gt; Haskell&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#list-source'</span>).autocomplete({ source: <span class="string">'#list-suggestions'</span> });</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -279,18 +236,18 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
 <table id="table-suggestions" style="display: none">
   <tbody>
     <tr data-label="Java">
-      <td><i class="icon-heart"></i></td>
+      <td><i class="fa fa-heart"></i></td>
       <td>Java</td>
       <td><i>my favorite language</i></td>
     </tr>
     <tr data-label="Haskell">
-      <td><i class="icon-flag"></i></td>
+      <td><i class="fa fa-flag"></i></td>
       <td>Haskell</td>
       <td>functional language</td>
     </tr>
   </tbody>
 </table>
-            <script src="../assets-demo/input/autocomplete/table.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>By using <tt>&lt;table&gt;</tt>, we can simply achieve table-based layout for suggestions.</p>
@@ -305,12 +262,12 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
 &lt;table id=&quot;table-suggestions&quot; style=&quot;display: none&quot;&gt;
   &lt;tbody&gt;
     &lt;tr data-label=&quot;Java&quot;&gt;
-      &lt;td&gt;&lt;i class=&quot;icon-heart&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;i class=&quot;fa fa-heart&quot;&gt;&lt;/i&gt;&lt;/td&gt;
       &lt;td&gt;Java&lt;/td&gt;
       &lt;td&gt;&lt;i&gt;my favorite language&lt;/i&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr data-label=&quot;Haskell&quot;&gt;
-      &lt;td&gt;&lt;i class=&quot;icon-flag&quot;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;i class=&quot;fa fa-flag&quot;&gt;&lt;/i&gt;&lt;/td&gt;
       &lt;td&gt;Haskell&lt;/td&gt;
       &lt;td&gt;functional language&lt;/td&gt;
     &lt;/tr&gt;
@@ -322,31 +279,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;table-source&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;
-
-&lt;table id=&quot;table-suggestions&quot; style=&quot;display: none&quot;&gt;
-  &lt;tbody&gt;
-    &lt;tr data-label=&quot;Java&quot;&gt;
-      &lt;td&gt;&lt;i class=&quot;icon-heart&quot;&gt;&lt;/i&gt;&lt;/td&gt;
-      &lt;td&gt;Java&lt;/td&gt;
-      &lt;td&gt;&lt;i&gt;my favorite language&lt;/i&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr data-label=&quot;Haskell&quot;&gt;
-      &lt;td&gt;&lt;i class=&quot;icon-flag&quot;&gt;&lt;/i&gt;&lt;/td&gt;
-      &lt;td&gt;Haskell&lt;/td&gt;
-      &lt;td&gt;functional language&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#table-source'</span>).autocomplete({ source: <span class="string">'#table-suggestions'</span> });</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -360,7 +292,7 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="cached" type="text" class="form-control" />
-            <script src="../assets-demo/input/autocomplete/cache.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>No matter what source of suggestion you use, you can always cache responses so that the client won't need to reach the server in case user repeats the search.</p>
@@ -391,24 +323,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;cached&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#cached'</span>).autocomplete({
-  cached: <span class="literal">true</span>,
-  minLength: <span class="number">2</span>,
-  source: <span class="function"><span class="keyword">function</span> <span class="params">(request, response)</span> {</span>
-    setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-      response($.ui.autocomplete.filter(source, request.term));
-    }, <span class="number">1000</span>);
-  }
-});</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -422,7 +336,7 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="auto-focus" type="text" class="form-control" />
-            <script src="../assets-demo/input/autocomplete/auto-focus.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>When auto-focus option is used, the first available suggestion is pre-selected so that user doesn't need to use an arrow and can confirm a suggestion immediately.</p>
@@ -439,16 +353,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;auto-focus&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-focus'</span>).autocomplete({ source: source, autoFocus: <span class="literal">true</span> });</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -462,7 +366,7 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="auto-fill" type="text" class="form-control" />
-            <script src="../assets-demo/input/autocomplete/auto-fill.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>Selected suggestion can be auto-filled into input as a user steps through suggestions.</p>
@@ -479,16 +383,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;auto-fill&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-fill'</span>).autocomplete({ source: source, autoFill: <span class="literal">true</span> });</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -502,7 +396,7 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="auto-focus-fill" type="text" class="form-control">
-            <script src="../assets-demo/input/autocomplete/auto-focus-fill.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>The combination of both previous options: auto-filling and auto-focus</p>
@@ -519,16 +413,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;auto-focus-fill&quot; type=&quot;text&quot; class=&quot;form-control&quot;&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#auto-focus-fill'</span>).autocomplete({ source: source, autoFocus: <span class="literal">true</span>, autoFill: <span class="literal">true</span> });</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -542,7 +426,7 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="token" type="text" class="form-control" />
-            <script src="../assets-demo/input/autocomplete/token.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>The basic support for tokenizing allows to auto-complete several values which are separated by one of specified tokens.</p>
@@ -563,20 +447,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;token&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#token'</span>).autocomplete({
-  source: source,
-  token: <span class="string">','</span>,
-  minLength: <span class="number">1</span>
-});</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -590,7 +460,7 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
         <div class="panel panel-default">
           <div class="panel-body">
             <input id="button" type="text" class="form-control" />
-            <script src="../assets-demo/input/autocomplete/button.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>Autocomplete has built-in functionality for adding a button to the input so user can open a list of suggestions by mouse.</p>
@@ -610,19 +480,6 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;button&quot; type=&quot;text&quot; class=&quot;form-control&quot; /&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js">$(<span class="string">'#button'</span>).autocomplete({
-  source: source,
-  showButton: <span class="literal">true</span>
-});</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
   
   <fieldset>
@@ -641,7 +498,7 @@ $(<span class="string">'#function-source'</span>).autocomplete({ source: asyncSu
   <li>Java</li>
   <li>Haskell</li>
 </ul>
-            <script src="../assets-demo/input/autocomplete/list-updates.js"></script>
+
           </div>
           <div class="panel-footer">
             <p>DOM based suggestions doesn't have to be static - when user changes input, we can request update of a DOM, but at the end, we need to request update of suggestions.</p>
@@ -684,36 +541,31 @@ $(<span class="string">'#updatable'</span>).autocomplete({
       </div>
 
     </div>
-
-    <!--<h4>Source:</h4>-->
-    <!--<div class="row">-->
-      <!---->
-      <!---->
-      <!--<div class="col col-md-6"><pre><code class="language-html">&lt;input id=&quot;updatable&quot; type=&quot;text&quot; class=&quot;form-control&quot;/&gt;
-
-&lt;ul id=&quot;updatable-suggestions&quot; style=&quot;display: none&quot;&gt;
-  &lt;li&gt;Java&lt;/li&gt;
-  &lt;li&gt;Haskell&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-</div>-->
-      <!--<div class="col col-md-6"><pre><code class="language-js"><span class="keyword">var</span> counter = <span class="number">1</span>;
-
-<span class="function"><span class="keyword">function</span> <span class="title">updateDom</span><span class="params">()</span> {</span>
-  $(<span class="string">'#updatable-suggestions'</span>).append($(<span class="string">'&lt;li&gt;Test'</span> + counter++ + <span class="string">'&lt;/li&gt;'</span>));
-}
-
-$(<span class="string">'#updatable'</span>).autocomplete({
-  source: <span class="string">'#updatable-suggestions'</span>,
-  update: <span class="function"><span class="keyword">function</span> <span class="params">(request, done)</span> {</span>
-    setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
-      updateDom();
-      done();
-    }, <span class="number">1000</span>);
-  }
-});</code></pre>
-</div>-->
-    <!--</div>-->
   </fieldset>
+  
+
+  
+    <script src="../assets-demo/input/autocomplete/json-source.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/function-source.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/list.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/table.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/cache.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/auto-focus.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/auto-fill.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/auto-focus-fill.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/token.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/button.js"></script>
+  
+    <script src="../assets-demo/input/autocomplete/list-updates.js"></script>
   
 
 </div>

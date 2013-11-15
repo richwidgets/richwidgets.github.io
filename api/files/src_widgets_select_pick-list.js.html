@@ -224,9 +224,9 @@
        *
        * @property switchByDblClick
        * @type Boolean
-       * @default false
+       * @default true
        */
-      switchByDblClick: false,
+      switchByDblClick: true,
       /**
        * When true, elements in the target list can be re-ordered
        *
@@ -299,7 +299,9 @@
     },
 
     _create: function () {
-      this.widgetEventPrefix = this.options.widgetEventPrefix;
+      if (this.options.widgetEventPrefix) {
+        this.widgetEventPrefix = this.options.widgetEventPrefix;
+      }
       this.sourceList = this.element.find(&#x27;.source&#x27;);
       this.targetList = this.element.find(&#x27;.target&#x27;);
       this._addDomElements();
@@ -352,7 +354,7 @@
 
       this._removeDomElements();
 
-      this.element.removeClass(&#x27;inner&#x27;).removeClass(&#x27;row&#x27;);
+      this.element.removeClass(&#x27;inner&#x27;);
       if (!this.element.attr(&#x27;class&#x27;)) {
         this.element.removeAttr(&#x27;class&#x27;);
       }
@@ -436,14 +438,14 @@
           widget._setHeightMax(value);
           break;
         case &#x27;sourceHeader&#x27;:
-          if (!widget.options.sourceHeader) {
-            widget._addSubHeader(value, this.options.targetHeader);
+          if (!widget.options.sourceHeader &amp;&amp; !widget.options.targetHeader) {
+            widget._addSubHeader(value,  widget.options.targetHeader);
           }
           widget.outer.find(&#x27;.sub-header-row .source&#x27;).text(value);
           break;
         case &#x27;targetHeader&#x27;:
-          if (!widget.options.targetHeader) {
-            widget._addSubHeader(value, this.options.targetHeader);
+          if (!widget.options.sourceHeader &amp;&amp; !widget.options.targetHeader) {
+            widget._addSubHeader(widget.options.sourceHeader, value);
           }
           widget.outer.find(&#x27;.sub-header-row .target&#x27;).text(value);
           break;
@@ -460,8 +462,8 @@
         case &#x27;orderButtonsText&#x27;:
           widget.targetList.orderingList(&#x27;option&#x27;, &#x27;buttonsText&#x27;, value);
           break;
-        case &#x27;buttonsText&#x27;:
-          this._applyButtonsText(this.outer.find(&#x27;.middle .btn-group-vertical&#x27;), value);
+        case &#x27;pickButtonsText&#x27;:
+          this._applyButtonsText(this.outer.find(&#x27;.middle .btn-group-picklist&#x27;), value);
           break;
         case &#x27;switchByClick&#x27;:
           if (value === true) {
@@ -484,7 +486,7 @@
 
     _addDomElements: function () {
       this._addParents();
-      var buttonColumn = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;middle button-column col-sm-1&#x27;);
+      var buttonColumn = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;middle pick-button-column&#x27;);
       buttonColumn.append(this._buttonStack());
       this.sourceList.parent().after(buttonColumn);
       this._trigger(&#x27;addDomElements&#x27;, undefined, {});
@@ -497,26 +499,26 @@
       buttonStack
         .append(
           button.clone()
-            .addClass(&#x27;btn-add-all col-sm-12 col-xs-3&#x27;)
-            .html(&#x27;&lt;i class=&quot;icon icon-right-all&quot; /&gt;&#x27;)
+            .addClass(&#x27;btn-add-all&#x27;)
+            .html(&#x27;&lt;i class=&quot;fa richicon-right-all&quot; /&gt;&#x27;)
             .on(&#x27;click.pickList&#x27;, $.proxy(this._addAllHandler, this))
         )
         .append(
           button.clone()
-            .addClass(&#x27;btn-add col-sm-12 col-xs-3&#x27;)
-            .html(&#x27;&lt;i class=&quot;icon icon-right&quot; /&gt;&#x27;)
+            .addClass(&#x27;btn-add&#x27;)
+            .html(&#x27;&lt;i class=&quot;fa richicon-right&quot; /&gt;&#x27;)
             .on(&#x27;click.pickList&#x27;, $.proxy(this._addHandler, this))
         )
         .append(
           button.clone()
-            .addClass(&#x27;btn-remove col-sm-12 col-xs-3&#x27;)
-            .html(&#x27;&lt;i class=&quot;icon icon-left&quot; /&gt;&#x27;)
+            .addClass(&#x27;btn-remove&#x27;)
+            .html(&#x27;&lt;i class=&quot;fa richicon-left&quot; /&gt;&#x27;)
             .on(&#x27;click.pickList&#x27;, $.proxy(this._removeHandler, this))
         )
         .append(
           button.clone()
-            .addClass(&#x27;btn-remove-all col-sm-12 col-xs-3&#x27;)
-            .html(&#x27;&lt;i class=&quot;icon icon-left-all&quot; /&gt;&#x27;)
+            .addClass(&#x27;btn-remove-all&#x27;)
+            .html(&#x27;&lt;i class=&quot;fa richicon-left-all&quot; /&gt;&#x27;)
             .on(&#x27;click.pickList&#x27;, $.proxy(this._removeAllHandler, this))
         );
       if (this.options.pickButtonsText) {
@@ -548,8 +550,8 @@
     },
 
     _addParents: function () {
-      this.element.addClass(&#x27;row inner&#x27;).wrap(
-        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;container pick-list outer&#x27;)
+      this.element.addClass(&#x27;inner&#x27;).wrap(
+        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;pick-list outer&#x27;)
       );
       this.outer = this.element.parents(&#x27;.outer&#x27;).first();
       if (this.options.styleClass) {
@@ -562,10 +564,10 @@
         this._addSubHeader(this.options.sourceHeader, this.options.targetHeader);
       }
       this.sourceList.wrap(
-        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;source-wrapper col-sm-5&#x27;)
+        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;source-wrapper&#x27;)
       );
       this.targetList.wrap(
-        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;target-wrapper col-sm-6&#x27;)
+        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;target-wrapper&#x27;)
       );
       this.content = this.element;
       this.outer.attr(&#x27;tabindex&#x27;, &#x27;-1&#x27;);
@@ -573,10 +575,10 @@
 
     _addSubHeader: function (sourceHeaderText, targetHeaderText) {
       if (sourceHeaderText || targetHeaderText) {
-        var subHeaderRow = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;row sub-header-row&#x27;);
-        var sourceHeader = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;col-sm-5 source header&#x27;).html(sourceHeaderText);
-        var targetHeader = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;col-sm-6 col-sm-offset-1 target header&#x27;).html(targetHeaderText);
-        subHeaderRow.append(sourceHeader).append(targetHeader);
+        var subHeaderRow = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;sub-header-row&#x27;);
+        var sourceHeader = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;source header&#x27;).html(sourceHeaderText);
+        var targetHeader = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;target header&#x27;).html(targetHeaderText);
+        subHeaderRow.append(sourceHeader).append(&#x27;&lt;div class=&quot;middle&quot; /&gt;&#x27;).append(targetHeader);
         var headerRow = this.outer.find(&#x27;.header-row&#x27;);
         if (headerRow.length !== 0) {
           subHeaderRow.insertAfter(headerRow);
@@ -588,8 +590,8 @@
 
     _addHeader: function (headerText) {
       if (headerText) {
-        var headerRow = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;row header-row&#x27;);
-        var header = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;col-xs-12 header&#x27;).html(headerText);
+        var headerRow = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;header-row&#x27;);
+        var header = $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;header&#x27;).html(headerText);
         headerRow.append(header);
         var subHeaderRow = this.outer.find(&#x27;.sub-header-row&#x27;);
         if (subHeaderRow.length !== 0) {
@@ -683,14 +685,14 @@
       this.sourceList.orderingList(&#x27;option&#x27;, &#x27;disabled&#x27;, true);
       this.targetList.orderingList(&#x27;option&#x27;, &#x27;disabled&#x27;, true);
       this.element.addClass(&#x27;disabled&#x27;);
-      this.outer.find(&#x27;.button-column button&#x27;).attr(&#x27;disabled&#x27;, true);
+      this.outer.find(&#x27;.pick-button-column button&#x27;).attr(&#x27;disabled&#x27;, true);
     },
 
     _enable: function () {
       this.sourceList.orderingList(&#x27;option&#x27;, &#x27;disabled&#x27;, false);
       this.targetList.orderingList(&#x27;option&#x27;, &#x27;disabled&#x27;, false);
       this.element.removeClass(&#x27;disabled&#x27;);
-      this.outer.find(&#x27;.button-column button&#x27;).attr(&#x27;disabled&#x27;, false);
+      this.outer.find(&#x27;.pick-button-column button&#x27;).attr(&#x27;disabled&#x27;, false);
       this._registerListeners();
     },
 

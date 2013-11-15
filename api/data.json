@@ -713,10 +713,10 @@
         },
         {
             "file": "src/widgets/output/chart.js",
-            "line": 460,
-            "description": "Use the destroy method to clean up any modifications your widget has made to the DOM",
+            "line": 465,
+            "description": "Removes the chart functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
-            "name": "_destroy",
+            "name": "destroy",
             "class": "chart",
             "module": "Output"
         },
@@ -913,13 +913,13 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 337,
+            "line": 339,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 339,
+            "line": 341,
             "description": "Connect the orderingList with another orderingList, allowing items to be dragged between them.",
             "params": [
                 {
@@ -936,7 +936,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 357,
+            "line": 359,
             "description": "Determine if the given item is selected",
             "itemtype": "method",
             "name": "isSelected",
@@ -956,7 +956,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 368,
+            "line": 370,
             "description": "Find and return the list of oerderingList elements that are selected",
             "itemtype": "method",
             "name": "getSelected",
@@ -969,7 +969,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 378,
+            "line": 380,
             "description": "Select the given item",
             "itemtype": "method",
             "name": "selectItem",
@@ -986,7 +986,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 390,
+            "line": 392,
             "description": "Un-select the given item",
             "itemtype": "method",
             "name": "unSelectItem",
@@ -1003,7 +1003,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 402,
+            "line": 404,
             "description": "Un-select all items in the orderingList",
             "itemtype": "method",
             "name": "unSelectAll",
@@ -1013,7 +1013,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 417,
+            "line": 419,
             "description": "Move the given items to the top of the orderingList",
             "itemtype": "method",
             "name": "moveTop",
@@ -1037,7 +1037,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 441,
+            "line": 444,
             "description": "Move the given items up one step in the orderingList",
             "itemtype": "method",
             "name": "moveUp",
@@ -1061,7 +1061,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 470,
+            "line": 474,
             "description": "Move the given items down one step in the orderingList",
             "itemtype": "method",
             "name": "moveDown",
@@ -1085,7 +1085,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 501,
+            "line": 506,
             "description": "Move the given items to the end of the orderingList",
             "itemtype": "method",
             "name": "moveLast",
@@ -1109,7 +1109,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 525,
+            "line": 531,
             "description": "Remove the given items from the orderingList",
             "itemtype": "method",
             "name": "remove",
@@ -1129,7 +1129,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 543,
+            "line": 549,
             "description": "Add the given items to the orderingList",
             "itemtype": "method",
             "name": "add",
@@ -1149,7 +1149,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 561,
+            "line": 567,
             "description": "Retrieve the jQuery list of all items in the orderingList",
             "itemtype": "method",
             "name": "getOrderedElements",
@@ -1162,7 +1162,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 571,
+            "line": 577,
             "description": "Retrieve the keys of all items in the orderingList",
             "itemtype": "method",
             "name": "getOrderedKeys",
@@ -1175,7 +1175,7 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 581,
+            "line": 587,
             "description": "Removes the ordering list functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
             "name": "destroy",
@@ -1184,13 +1184,13 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 725,
+            "line": 731,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 943,
+            "line": 956,
             "description": "A dump of the current state of the widget",
             "itemtype": "method",
             "name": "_uiHash",
@@ -1205,13 +1205,13 @@
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 963,
+            "line": 976,
             "class": "orderingList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/ordering-list.js",
-            "line": 1017,
+            "line": 1030,
             "class": "orderingList",
             "module": "Select"
         },
@@ -1324,7 +1324,7 @@
             "itemtype": "property",
             "name": "switchByDblClick",
             "type": "Boolean",
-            "default": "false",
+            "default": "true",
             "class": "pickList",
             "module": "Select"
         },
@@ -1417,13 +1417,13 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 247,
+            "line": 249,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 249,
+            "line": 251,
             "description": "Move items from the target list of the pickList to the source list.",
             "params": [
                 {
@@ -1447,7 +1447,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 267,
+            "line": 269,
             "description": "Move items from the source list of the pickList to the target list.",
             "params": [
                 {
@@ -1471,7 +1471,7 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 285,
+            "line": 287,
             "description": "Removes the pick list functionality completely. This will return the element back to its pre-init state.",
             "itemtype": "method",
             "name": "destroy",
@@ -1480,19 +1480,19 @@
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 293,
+            "line": 295,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 590,
+            "line": 592,
             "class": "pickList",
             "module": "Select"
         },
         {
             "file": "src/widgets/select/pick-list.js",
-            "line": 600,
+            "line": 602,
             "class": "pickList",
             "module": "Select"
         }
@@ -1516,31 +1516,31 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:357"
+            "line": " src/widgets/select/ordering-list.js:359"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:368"
+            "line": " src/widgets/select/ordering-list.js:370"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:525"
+            "line": " src/widgets/select/ordering-list.js:531"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:543"
+            "line": " src/widgets/select/ordering-list.js:549"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:561"
+            "line": " src/widgets/select/ordering-list.js:567"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:571"
+            "line": " src/widgets/select/ordering-list.js:577"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " src/widgets/select/ordering-list.js:943"
+            "line": " src/widgets/select/ordering-list.js:956"
         },
         {
             "message": "Missing item type",
@@ -1564,35 +1564,35 @@
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:337"
+            "line": " src/widgets/select/ordering-list.js:339"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:725"
+            "line": " src/widgets/select/ordering-list.js:731"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:963"
+            "line": " src/widgets/select/ordering-list.js:976"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/ordering-list.js:1017"
+            "line": " src/widgets/select/ordering-list.js:1030"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:247"
+            "line": " src/widgets/select/pick-list.js:249"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:293"
+            "line": " src/widgets/select/pick-list.js:295"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:590"
+            "line": " src/widgets/select/pick-list.js:592"
         },
         {
             "message": "Missing item type",
-            "line": " src/widgets/select/pick-list.js:600"
+            "line": " src/widgets/select/pick-list.js:602"
         }
     ]
 }

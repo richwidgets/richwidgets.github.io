@@ -380,7 +380,9 @@
       }
       // if mouse ordering is disabled buttons have to be shown
       this._addDomElements();
-      this.widgetEventPrefix = this.options.widgetEventPrefix;
+      if (this.options.widgetEventPrefix) {
+        this.widgetEventPrefix = this.options.widgetEventPrefix;
+      }
       if (this.options.mouseOrderable === true) {
         this.$pluginRoot.sortable(this.sortableOptions);
       }
@@ -540,9 +542,10 @@
     moveTop: function (items, event) {
       event = event || null;
       if (this.options.disabled) { return; }
-      var first = items.prevAll().not(&#x27;.ui-selected&#x27;).last();
+      var moved = this.$pluginRoot.find(items);
+      var first = moved.prevAll().not(&#x27;.ui-selected&#x27;).last();
       var initialState = this.getOrderedKeys();
-      $(items).insertBefore(first);
+      $(moved).insertBefore(first);
       var finalState = this.getOrderedKeys();
       if (initialState.toString() !== finalState.toString()) {
         var ui = this._uiHash();
@@ -565,7 +568,8 @@
       event = event || null;
       if (this.options.disabled) { return; }
       var initialState = this.getOrderedKeys();
-      $(items).each(function () {
+      var moved = this.$pluginRoot.find(items);
+      $(moved).each(function () {
         var $item = $(this);
         var prev = $item.prevAll().not(&#x27;.ui-selected&#x27;).first();
         if (prev.length &gt; 0) {
@@ -594,7 +598,8 @@
       event = event || null;
       if (this.options.disabled) { return; }
       var initialState = this.getOrderedKeys();
-      $(items).sort(function () {
+      var moved = this.$pluginRoot.find(items);
+      $(moved).sort(function () {
         return 1;
       }).each(function () {
           var $item = $(this);
@@ -625,8 +630,9 @@
       event = event || null;
       if (this.options.disabled) { return; }
       var initialState = this.getOrderedKeys();
-      var last = items.nextAll().not(&#x27;.ui-selected&#x27;).last();
-      $(items).insertAfter(last);
+      var moved = this.$pluginRoot.find(items);
+      var last = moved.nextAll().not(&#x27;.ui-selected&#x27;).last();
+      $(moved).insertAfter(last);
       var finalState = this.getOrderedKeys();
       if (initialState.toString() !== finalState.toString()) {
         var ui = this._uiHash();
@@ -884,10 +890,10 @@
     _addButtons: function () {
       var buttonStack = $(&#x27;&lt;div/&gt;&#x27;)
         .addClass(&#x27;btn-group-vertical&#x27;);
-      this._addButton(buttonStack, &#x27;first&#x27;, &#x27;icon-arrow-up&#x27;, $.proxy(this._firstHandler, this));
-      this._addButton(buttonStack, &#x27;up&#x27;, &#x27;icon-arrow-up&#x27;, $.proxy(this._upHandler, this));
-      this._addButton(buttonStack, &#x27;down&#x27;, &#x27;icon-arrow-down&#x27;, $.proxy(this._downHandler, this));
-      this._addButton(buttonStack, &#x27;last&#x27;, &#x27;icon-arrow-down&#x27;, $.proxy(this._lastHandler, this));
+      this._addButton(buttonStack, &#x27;first&#x27;, $.proxy(this._firstHandler, this));
+      this._addButton(buttonStack, &#x27;up&#x27;, $.proxy(this._upHandler, this));
+      this._addButton(buttonStack, &#x27;down&#x27;, $.proxy(this._downHandler, this));
+      this._addButton(buttonStack, &#x27;last&#x27;, $.proxy(this._lastHandler, this));
       if (this.options.buttonsText) {
         this._applyButtonsText(buttonStack, this.options.buttonsText);
       }
@@ -917,13 +923,13 @@
       }
     },
 
-    _addButton: function (buttonStack, buttonClass, icon, handler) {
+    _addButton: function (buttonStack, buttonClass, handler) {
       var button = $(&#x27;&lt;button/&gt;&#x27;)
         .attr(&#x27;type&#x27;, &#x27;button&#x27;)
         .addClass(&#x27;btn btn-default&#x27;)
         .addClass(&#x27;btn-&#x27; + buttonClass)
         .on(&#x27;click.orderingList&#x27;, handler)
-        .append($(&#x27;&lt;i /&gt;&#x27;).addClass(&#x27;icon icon-&#x27; + buttonClass));
+        .append($(&#x27;&lt;i /&gt;&#x27;).addClass(&#x27;fa richicon-&#x27; + buttonClass));
       buttonStack.append(button);
     },
 
@@ -936,21 +942,28 @@
         if (this.strategy === &#x27;table&#x27;) {
           this.element
             .find(&#x27;tbody &gt; tr&#x27;)
-            .prepend(&#x27;&lt;th class=&quot;handle&quot;&gt;&lt;i class=&quot;icon-move&quot;&gt;&lt;/i&gt;&lt;/th&gt;&#x27;);
+            .prepend(&#x27;&lt;th class=&quot;handle&quot;&gt;&lt;i class=&quot;fa fa-arrows&quot;&gt;&lt;/i&gt;&lt;/th&gt;&#x27;);
           this.element
             .find(&#x27;thead &gt; tr&#x27;)
             .prepend(&#x27;&lt;th class=&quot;handle&quot;&gt;&lt;/th&gt;&#x27;);
         } else if (this.strategy === &#x27;list&#x27;) {
           this.element
             .find(&#x27;li&#x27;)
-            .prepend(&#x27;&lt;div class=&quot;handle&quot;&gt;&lt;i class=&quot;icon-move&quot;&gt;&lt;/i&gt;&lt;/div&gt;&#x27;);
+            .prepend(&#x27;&lt;div class=&quot;handle&quot;&gt;&lt;i class=&quot;fa fa-arrows&quot;&gt;&lt;/i&gt;&lt;/div&gt;&#x27;);
         }
       }
     },
 
     _addParents: function () {
       this.element.addClass(&#x27;list&#x27;).wrap(
-        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;ordering-list select-list&#x27;).attr(&#x27;tabindex&#x27;, -1).append(
+        $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;ordering-list select-list&#x27;).attr(&#x27;tabindex&#x27;, -1)
+          .focus(function(){
+            var x = window.scrollX, y = window.scrollY;
+            setTimeout(function() {
+              window.scrollTo(x,y);
+            }, 0);
+          })
+          .append(
           $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;content&#x27;).append(
             $(&#x27;&lt;div /&gt;&#x27;).addClass(&#x27;scroll-box&#x27;)
           )
